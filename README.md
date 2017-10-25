@@ -1,3 +1,3 @@
-# alpine-emails
+# deets-emails
 
-The official alpine labs email sending server
+The official deets email sending server
