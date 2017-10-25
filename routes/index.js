@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var cors = require('cors');
 var email = require('./email');
+var franc = require('franc');
+
 
 
 
@@ -22,6 +24,12 @@ router.get('/appversion', cors(), (req, res) => {
     }
     res.json({result: version});
 })
+
+router.post('/detect', cors(), function(req,res){
+  var detectedLanguage = franc(req.body.languageString, {'minLength': 3});
+
+  res.json(detectedLanguage);
+});
 
 router.post('/email', cors(), (req, res) => {
 
