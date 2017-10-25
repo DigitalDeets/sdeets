@@ -10,10 +10,8 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['SDeets'],
-  /**
-   * Your New Relic license key.
-   */
+  app_name: ['deets-email'],
+
   license_key: process.env.NEW_RELIC_LICENSE_KEY,
   logging: {
     /**
