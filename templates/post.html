@@ -1,28 +1,22 @@
 <body class="container" style="background: #fff">
-    <img src="http://schooldeets.com/wp-content/uploads/2015/10/school.logo_1.png" style="text-align: left; margin-left:30px; margin-bottom:20px"/>
-    <div style="background: #f6f6f6; padding: 5% 2.5%;font-size: 16px; font-family: 'Helvetica-light'">
+    <img src="https://app.schooldeets.com/wp-content/uploads/images/schooldeets_logo.png" style="text-align:left;margin-left:30px;margin-bottom:20px" />
+    <div style="background:#f6f6f6;padding:2%;font-size:16px;line-height: 20px;font-family:'Arial', 'Helvetica-light', sans-serif;">
         <div style="text-align: center">
-        <!-- <div class="slogo" style="margin-top:20px;">
-                <img src="{{schoolLogo}}"/>
-            </div>
-            <div class="glogo" style="margin-top:20px;">
-                <img src="{{groupIcon}}"/>
-            </div>-->
             <div class="smessage" style="margin-top:20px; font-weight: bold">
                 Hello {{receiverName}}, <span style="color:#ee6c34">{{senderName}} </span>sent the following message to <span style="color:#ee6c34">{{group}}</span>
             </div>
         </div>  
         <div style="margin-top:20px">
             <!--<img src="{{profilePic}}" style="position:absolute"/>-->
-            <div style="text-align: left; padding: 5%; background:#fff">
+            <div style="text-align: left; padding:3% 5%; background:#ffffff;">
                 {{content|safe}}
-                </div>
+            </div>
         </div>
        <div style="text-align: center; margin-top:30px;">
             <!--<a href="schooldeets://{{postId}}" style="text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;">
                 Go to Post {{postUrl}}
             </a>-->
-            <a href="https://sd-email.herokuapp.com/?postId={{postId}}&postUrl={{postUrl}}" style="text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;">
+            <a href="https://sd-email.herokuapp.com/?postId={{postId}}&postUrl={{postUrl}}" style="text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">
                 Go to Post
             </a>
         </div>
@@ -31,12 +25,12 @@
                 <!--<a>Update your School Deets communication preference</a>-->
                 <div style="text-align: center; margin:10px 0">
                     <div style="padding: 20px; display:inline-block; color: #b3b3b1 !important; font-size:12px;">
-                        <a style="text-decoration:none;" href="https://itunes.apple.com/us/app/school-deets/id1109287736?mt=8">
+                        <a style="text-decoration:none;" href="https://itunes.apple.com/us/app/school-deets/id1109287736?mt=8" target="_blank">
                             Download in iTunes
                         </a>
                     </div>
                     <div style="padding: 20px; display:inline-block; color: #b3b3b1 !important; font-size:12px;"> 
-                        <a style="text-decoration:none;" href="https://play.google.com/store/apps/details?id=com.schooldeets.app&hl=en">
+                        <a style="text-decoration:none;" href="https://play.google.com/store/apps/details?id=com.schooldeets.app&hl=en" target="_blank">
                             Download in Google Play
                         </a>
                     </div>
@@ -48,9 +42,8 @@
         <div style="text-align: center; color: #b3b3b1; font-size:12px">
             Sent by School Deets, 820 S Monaco Pkwy, Denver, CO 80224
         </div>
-        <a style="text-align: center; display: block; margin-top:10px; color: #b3b3b1; font-size:12px;" href="https://app.schooldeets.com/email-unsubscribe/?id={{userId}}">
+        <a style="text-align: center; display: block; margin-top:10px; color: #b3b3b1; font-size:12px;" href="https://app.schooldeets.com/email-unsubscribe/?id={{userId}}" target="_blank">
             Click here to unsubscribe
         </a>
     </div>
-
 </body>
