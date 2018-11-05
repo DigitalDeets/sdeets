@@ -3,26 +3,21 @@
     <div style="background:#f6f6f6;padding:2%;font-size:16px;line-height: 20px;font-family:'Arial', 'Helvetica-light', sans-serif;">
         <div style="text-align: center">
             <div class="smessage" style="margin-top:20px; font-weight: bold">
-                Hello {{receiverName}}, <span style="color:#ee6c34">{{senderName}} </span>sent the following message to <span style="color:#ee6c34">{{group}}</span>
+                Hello {{receiverName}}, <span style="color:#ee6c34">{{senderName}} </span>{{postType}} the following message to <span style="color:#ee6c34">{{group}}</span>
             </div>
         </div>  
         <div style="margin-top:20px">
-            <!--<img src="{{profilePic}}" style="position:absolute"/>-->
             <div style="text-align: left; padding:3% 5%; background:#ffffff;">
                 {{content|safe}}
             </div>
         </div>
        <div style="text-align: center; margin-top:30px;">
-            <!--<a href="schooldeets://{{postId}}" style="text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;">
-                Go to Post {{postUrl}}
-            </a>-->
             <a href="https://sd-email.herokuapp.com/?postId={{postId}}&postUrl={{postUrl}}" style="text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">
                 Go to Post
             </a>
         </div>
         <div style="border-top: 1px solid #cac5c5; text-align: center; margin-top:30px;">
             <div style="margin-top:30px">
-                <!--<a>Update your School Deets communication preference</a>-->
                 <div style="text-align: center; margin:10px 0">
                     <div style="padding: 20px; display:inline-block; color: #b3b3b1 !important; font-size:12px;">
                         <a style="text-decoration:none;" href="https://itunes.apple.com/us/app/school-deets/id1109287736?mt=8" target="_blank">

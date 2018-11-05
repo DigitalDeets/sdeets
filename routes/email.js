@@ -17,16 +17,14 @@ module.exports = {
           var template = swig.compileFile(__dirname + `/../templates/${options.template}.html`);
 
           var html = template({
-            //schoolLogo: options.emailOptions.logo,
-            //groupIcon: options.emailOptions.icon,
             receiverName: options.receiverName,
             senderName: options.senderName,
             content: options.content,
             group: options.group,
+            postType: options.postType,
             postId: options.postId,
             userId: options.userId,
             postUrl: options.postUrl
-            //profilePic: options.emailOptions.profilePic
         });
 
           var mailOptions = {
