@@ -27,7 +27,7 @@ module.exports = {
                 schoolIcon :options.schoolIcon,
                 schoolName :options.schoolName,
                 authorAvatar :options.authorAvatar,
-                posterNam :options.posterName,                    
+                posterName :options.posterName,                    
                 postDate :options.postDate,
                 postDateIcon :options.postDateIcon,
                 postImage :options.postImage
