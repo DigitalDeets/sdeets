@@ -9,23 +9,42 @@ var transporter = nodemailer.createTransport('SES', {
     region: 'us-west-2' 
 });
 
-
 module.exports = {
-
-    
     send:function( options, err, cb ){
           var template = swig.compileFile(__dirname + `/../templates/${options.template}.html`);
-
-          var html = template({
-            receiverName: options.receiverName,
-            senderName: options.senderName,
-            content: options.content,
-            group: options.group,
-            postType: options.postType,
-            postId: options.postId,
-            userId: options.userId,
-            postUrl: options.postUrl
-        });
+          
+          if(options.template == 'post_notification'){
+            var html = template({
+                receiverName: options.receiverName,
+                senderName: options.senderName,
+                content: options.content,
+                group: options.group,
+                postType: options.postType,
+                postId: options.postId,
+                userId: options.userId,
+                postUrl: options.postUrl,
+                groups :options.groups,
+                schoolIcon :options.schoolIcon,
+                schoolName :options.schoolName,
+                authorAvatar :options.authorAvatar,
+                posterNam :options.posterName,                    
+                postDate :options.postDate,
+                postDateIcon :options.postDateIcon,
+                postImage :options.postImage
+          });
+          
+         }else if(options.template == 'post'){
+           var html = template({
+              receiverName: options.receiverName,
+              senderName: options.senderName,
+              content: options.content,
+              group: options.group,
+              postType: options.postType,
+              postId: options.postId,
+              userId: options.userId,
+              postUrl: options.postUrl
+          });
+         }
 
           var mailOptions = {
             transport: transporter,
