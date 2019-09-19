@@ -26,7 +26,10 @@
                     {% if postImage %}
                     <div style="margin-bottom: 10px;"><img src="{{postImage}}" style="width: 100%;" alt=""/></div>
                     {% endif %}
-                    <div style="position: relative; font-size: 14px; line-height: 20px;">{{content|safe}}</div>
+                    <div style="position: relative; font-size: 14px; line-height: 20px; max-height: 78px; overflow:hidden;">{{content|safe}}</div>
+                    <div>
+                        <a href="https://sd-email.herokuapp.com/?postId={{postId}}&postUrl={{postUrl}}" style="display: inline-block; padding: 10px 10px 10px 0; font-weight: bold; color: #0d779b; text-decoration: none;">More</a>
+                    </div>
                 </div>                
             </div>
         </div>
