@@ -3,7 +3,7 @@
     <div style="background:#f6f6f6;padding:2%;font-size:16px;line-height: 20px;font-family:'Arial', 'Helvetica-light', sans-serif;">
         <div style="text-align: center">
             <div style="margin-top:20px; font-weight: bold">
-                Hello {{receiverName}}, <span style="color:#ee6c34">{{senderName}}</span> {{postType}} the following message to <span style="color:#ee6c34">{{group}}</span>
+                Hello{% if receiverName %}{{receiverName}}{% endif %}, <span style="color:#ee6c34">{{senderName}}</span> {{postType}} the following message to <span style="color:#ee6c34">{{group}}</span>
             </div>
         </div>  
         <div style="margin-top:20px; background:#ffffff; color: #333333;">
@@ -28,7 +28,11 @@
                     {% endif %}
                     <div style="position: relative; font-size: 14px; line-height: 20px; max-height: 78px; overflow:hidden;">{{content|safe}}</div>
                     <div>
+                        {% if incompleteRegistration %}
+                        <a href="https://app.schooldeets.com/parent-registration?parent_id={{userId}}&post_id={{postUrl}}" style="display: inline-block; padding: 10px 10px 10px 0; font-weight: bold; color: #0d779b; text-decoration: none;">More</a>
+                        {% else %}
                         <a href="https://sd-email.herokuapp.com/?postId={{postId}}&postUrl={{postUrl}}" style="display: inline-block; padding: 10px 10px 10px 0; font-weight: bold; color: #0d779b; text-decoration: none;">More</a>
+                        {% endif %}
                     </div>
                 </div>                
             </div>

@@ -23,14 +23,15 @@ module.exports = {
                 postId: options.postId,
                 userId: options.userId,
                 postUrl: options.postUrl,
-                groups :options.groups,
-                schoolIcon :options.schoolIcon,
-                schoolName :options.schoolName,
-                authorAvatar :options.authorAvatar,
-                posterName :options.posterName,                    
-                postDate :options.postDate,
-                postDateIcon :options.postDateIcon,
-                postImage :options.postImage
+                groups: options.groups,
+                schoolIcon: options.schoolIcon,
+                schoolName: options.schoolName,
+                authorAvatar: options.authorAvatar,
+                posterName: options.posterName,                    
+                postDate: options.postDate,
+                postDateIcon: options.postDateIcon,
+                postImage: options.postImage,
+                incompleteRegistration: options.incompleteRegistration
           });
           
          }else if(options.template == 'post'){
