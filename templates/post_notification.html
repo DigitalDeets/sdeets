@@ -38,7 +38,11 @@
             </div>
         </div>
         <div style="text-align: center; margin-top:30px;">
+            {% if incompleteRegistration %}
+            <a href="https://app.schooldeets.com/parent-registration?parent_id={{userId}}&post_id={{postUrl}}" style="text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Go to Post</a>
+            {% else %}
             <a href="https://sd-email.herokuapp.com/?postId={{postId}}&postUrl={{postUrl}}" style="text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Go to Post</a>
+            {% endif %}
         </div>
         <div style="border-top: 1px solid #cac5c5; text-align: center; margin-top:30px;">
             <div style="margin-top:30px">
