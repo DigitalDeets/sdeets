@@ -33,9 +33,9 @@
                     <div style="position: relative; font-size: 14px; line-height: 20px; max-height: 78px; overflow:hidden;">{{content|safe}}</div>
                     <div>
                         {% if incompleteRegistration %}
-                        <a href="https://app.schooldeets.com/parent-registration?parent_id={{userId}}&post_id={{postUrl}}" style="display: inline-block; padding: 10px 10px 10px 0; font-weight: bold; color: #0d779b; text-decoration: none;">Read the entire message in School Deets... Go To School Deets</a>
+                        <a href="https://app.schooldeets.com/parent-registration?parent_id={{userId}}&post_id={{postUrl}}" style="display: inline-block; padding: 10px 10px 10px 0; font-weight: bold; color: #0d779b; text-decoration: none;" target="_blank">Read the entire message in School Deets... Go To School Deets</a>
                         {% else %}
-                        <a href="https://sd-email.herokuapp.com/?postId={{postId}}&postUrl={{postUrl}}" style="display: inline-block; padding: 10px 10px 10px 0; font-weight: bold; color: #0d779b; text-decoration: none;">More</a>
+                        <a href="https://sd-email.herokuapp.com/?postId={{postId}}&postUrl={{postUrl}}" style="display: inline-block; padding: 10px 10px 10px 0; font-weight: bold; color: #0d779b; text-decoration: none;" target="_blank">More</a>
                         {% endif %}
                     </div>
                 </div>                
