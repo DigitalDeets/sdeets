@@ -17,6 +17,7 @@ module.exports = {
             var html = template({
                 receiverName: options.receiverName,
                 senderName: options.senderName,
+                senderPosition: options.senderPosition,
                 content: options.content,
                 group: options.group,
                 postType: options.postType,
