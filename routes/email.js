@@ -23,6 +23,7 @@ module.exports = {
                 postType: options.postType,
                 postId: options.postId,
                 userId: options.userId,
+                userEmail: options.receiver,
                 postUrl: options.postUrl,
                 groups: options.groups,
                 schoolIcon: options.schoolIcon,
@@ -32,7 +33,7 @@ module.exports = {
                 postDate: options.postDate,
                 postDateIcon: options.postDateIcon,
                 postImage: options.postImage,
-                incompleteRegistration: options.incompleteRegistration
+                incompleteRegistration: options.incompleteRegistration  
           });
           
          }else if(options.template == 'post'){

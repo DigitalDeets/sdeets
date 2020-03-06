@@ -76,9 +76,15 @@
         <div style="text-align: center; color: #b3b3b1; font-size:12px">
             Sent by School Deets, 820 S Monaco Pkwy, Denver, CO 80224
         </div>
+        {% if incompleteRegistration %}
+        <a style="text-align: center; display: block; margin-top:10px; color: #b3b3b1; font-size:12px;" href="https://app.schooldeets.com/unsubscribe?email={{userEmail}}&id={{userId}}" target="_blank">
+            Unsubscribe
+        </a>
+        {% else %}
         <a style="text-align: center; display: block; margin-top:10px; color: #b3b3b1; font-size:12px;" href="https://app.schooldeets.com/dashboard/account-settings" target="_blank">
             Manage notifications
         </a>
+        {% endif %}
     </div>
     <img src="https://app.schooldeets.com/email_pixel/post_read.php?parent_id={{userId}}&post_id={{postId}}&image=tracking.png" alt="" width="1" height="1" />
 </body>
