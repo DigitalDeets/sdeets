@@ -33,6 +33,7 @@ module.exports = {
                 postDate: options.postDate,
                 postDateIcon: options.postDateIcon,
                 postImage: options.postImage,
+                truncateText: options.truncateText,
                 incompleteRegistration: options.incompleteRegistration  
           });
           

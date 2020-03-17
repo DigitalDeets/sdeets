@@ -4,7 +4,7 @@
         <div style="text-align: center">
             <div style="margin-top:20px; font-weight: bold">
                 {% if incompleteRegistration %}
-                Hello {{schoolName}} Parent, <span style="color:#ee6c34">{{senderName}}</span> {% if senderPosition %}{{senderPosition}}{% endif %} has {{postType}} the following message to {{schoolName}} <span style="color:#ee6c34">{{group}}</span>
+                Hello {{schoolName}} Parent, <span style="color:#ee6c34">{{senderName}}</span> {% if senderPosition && !incompleteRegistration %}{{senderPosition}}{% endif %} has {{postType}} the following message to {{schoolName}} <span style="color:#ee6c34">{{group}}</span>
                 {% else %}
                 Hello{% if receiverName %} {{receiverName}}{% endif %}, <span style="color:#ee6c34">{{senderName}}</span> {{postType}} the following message to <span style="color:#ee6c34">{{group}}</span>
                 {% endif %}
@@ -30,7 +30,11 @@
                     {% if postImage %}
                     <div style="margin-bottom: 10px;"><img src="{{postImage}}" style="width: 100%;" alt=""/></div>
                     {% endif %}
+                    {% if truncateText %}
                     <div style="position: relative; font-size: 14px; line-height: 20px; max-height: 78px; overflow:hidden;">{{content|safe}}</div>
+                    {% else %}
+                    <div style="position: relative; font-size: 14px; line-height: 20px;">{{content|safe}}</div>
+                    {% endif %}
                     <div>
                         {% if incompleteRegistration %}
                         <a href="https://app.schooldeets.com/parent-registration?parent_id={{userId}}&post_id={{postUrl}}" style="display: inline-block; padding: 10px 10px 10px 0; font-weight: bold; color: #0d779b; text-decoration: none;" target="_blank">Read the entire message in School Deets... Go To School Deets</a>
