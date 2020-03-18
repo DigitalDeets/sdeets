@@ -4,7 +4,7 @@
         <div style="text-align: center">
             <div style="margin-top:20px; font-weight: bold">
                 {% if incompleteRegistration %}
-                Hello {{schoolName}} Parent, <span style="color:#ee6c34">{{senderName}}</span> {% if senderPosition && !incompleteRegistration %}{{senderPosition}}{% endif %} has {{postType}} the following message to {{schoolName}} {{group}}
+                Hello {{schoolName}} Parent, <span style="color:#ee6c34">{{senderName}}</span> has {{postType}} the following message to {{schoolName}} {{group}}
                 {% else %}
                 Hello{% if receiverName %} {{receiverName}}{% endif %}, <span style="color:#ee6c34">{{senderName}}</span> {{postType}} the following message to <span style="color:#ee6c34">{{group}}</span>
                 {% endif %}
