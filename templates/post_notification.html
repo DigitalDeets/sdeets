@@ -4,7 +4,7 @@
         <div style="text-align: center">
             <div style="margin-top:20px; font-weight: bold">
                 {% if incompleteRegistration %}
-                Hello {{schoolName}} Parent, <span style="color:#ee6c34">{{senderName}}</span> {% if senderPosition && !incompleteRegistration %}{{senderPosition}}{% endif %} has {{postType}} the following message to {{schoolName}} <span style="color:#ee6c34">{{group}}</span>
+                Hello {{schoolName}} Parent, <span style="color:#ee6c34">{{senderName}}</span> {% if senderPosition && !incompleteRegistration %}{{senderPosition}}{% endif %} has {{postType}} the following message to {{schoolName}} {{group}}
                 {% else %}
                 Hello{% if receiverName %} {{receiverName}}{% endif %}, <span style="color:#ee6c34">{{senderName}}</span> {{postType}} the following message to <span style="color:#ee6c34">{{group}}</span>
                 {% endif %}
@@ -37,7 +37,7 @@
                     {% endif %}
                     <div>
                         {% if incompleteRegistration %}
-                        <a href="https://app.schooldeets.com/parent-registration?parent_id={{userId}}&post_id={{postUrl}}" style="display: inline-block; padding: 10px 10px 10px 0; font-weight: bold; color: #0d779b; text-decoration: none;" target="_blank">Read the entire message in School Deets... Go To School Deets</a>
+                        <a href="https://app.schooldeets.com/parent-registration?parent_id={{userId}}&post_id={{postUrl}}" style="display: inline-block; padding: 10px 10px 10px 0; font-weight: bold; color: #0d779b; text-decoration: none;" target="_blank">Go To School Deets</a>
                         {% else %}
                         <a href="https://sd-email.herokuapp.com/?postId={{postId}}&postUrl={{postUrl}}" style="display: inline-block; padding: 10px 10px 10px 0; font-weight: bold; color: #0d779b; text-decoration: none;" target="_blank">More</a>
                         {% endif %}
@@ -47,8 +47,9 @@
         </div>
         {% if incompleteRegistration %}
         <div style="margin:20px;">
-            <p>WHY? School Deets is a parent and community engagement tool designed to help school communities connect, communicate, and engage.</p>
-            <p>WHAT DO I NEED TO SET UP AN ACCOUNT? You will need your child's School Deets code or Student ID number.</p>
+            <p>WHY SCHOOL DEETS? Your school has adopted the School Deets system to communicate with you.</p>
+            <p>WHAT IS SCHOOL DEETS? School Deets is a parent and community engagement tool designed to help school communities connect, communicate, and engage.</p>
+            <p>WHAT DO I NEED TO DO? Set up an account. You will need your child's School Deets code or Student ID number.</p>
             <p>THEN WHAT? Once you create your account you will be connected to more groups at your child's school and can easily stay informed about everything going on at your child's school.</p>
         </div>
         {% endif %}
