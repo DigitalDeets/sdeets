@@ -31,10 +31,10 @@ module.exports = {
                 authorAvatar: options.authorAvatar,
                 posterName: options.posterName,                    
                 postDate: options.postDate,
-                postDateIcon: options.postDateIcon,
                 postImage: options.postImage,
                 truncateText: options.truncateText,
-                incompleteRegistration: options.incompleteRegistration  
+                incompleteRegistration: options.incompleteRegistration,
+                adsPosts: options.adsPosts
           });
           
          }else if(options.template == 'post'){
