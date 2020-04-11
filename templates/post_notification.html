@@ -91,7 +91,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
         
         <div style="text-align: center; color: #b3b3b1; font-size:12px">Sent by School Deets, 820 S Monaco Pkwy, Denver, CO 80224</div>
@@ -105,7 +104,7 @@
         </div>
     </div>
     {% if adsPosts.ids %}
-    <img src="https://app.schooldeets.com/email_pixel/post_read.php?parent_id={{userId}}&post_id={{postId}}ads_post_id={{adsPosts.ids}}&image=tracking.png" alt="" width="1" height="1" />
+    <img src="https://app.schooldeets.com/email_pixel/post_read.php?parent_id={{userId}}&post_id={{postId}}&ads_post_id={{adsPosts.ids}}&image=tracking.png" alt="" width="1" height="1" />
     {% else %}
     <img src="https://app.schooldeets.com/email_pixel/post_read.php?parent_id={{userId}}&post_id={{postId}}&image=tracking.png" alt="" width="1" height="1" />
     {% endif %}
