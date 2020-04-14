@@ -13,6 +13,8 @@ module.exports = {
     send:function( options, err, cb ){
           var template = swig.compileFile(__dirname + `/../templates/${options.template}.html`);
           
+          var sender_addres = '<no-reply@schooldeets.com>';
+          
           if(options.template == 'post_notification'){
             var html = template({
                 receiverName: options.receiverName,
@@ -37,6 +39,8 @@ module.exports = {
                 adsPosts: options.adsPosts
           });
           
+          sender_addres = options.schoolName + ' ' + sender_addres;
+        
          }else if(options.template == 'post'){
            var html = template({
               receiverName: options.receiverName,
@@ -52,7 +56,7 @@ module.exports = {
 
           var mailOptions = {
             transport: transporter,
-            from: 'School Deets <no-reply@schooldeets.com>', // sender address
+            from: sender_addres, // sender address
             to: options.receiver, // list of receivers
             subject: options.subject, // Subject line
             html: html
