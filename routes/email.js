@@ -13,7 +13,7 @@ module.exports = {
     send:function( options, err, cb ){
           var template = swig.compileFile(__dirname + `/../templates/${options.template}.html`);
           
-          var sender_addres = '<no-reply@schooldeets.com>';
+          var sender_addres = 'School Deets <no-reply@schooldeets.com>';
           
           if(options.template == 'post_notification'){
             var html = template({
@@ -38,8 +38,6 @@ module.exports = {
                 incompleteRegistration: options.incompleteRegistration,
                 adsPosts: options.adsPosts
           });
-          
-          sender_addres = options.schoolName + ' ' + sender_addres;
         
          }else if(options.template == 'post'){
            var html = template({
