@@ -70,8 +70,7 @@ module.exports = {
             var tt = new Date().getTime()
             console.log('email sent to ' + mailOptions.to + ' at ' + new Date(tt));
            
-            //cb({success: true});
-            cb({success: true, response:info.response});
+            cb({success: true});
         }
     });
 
