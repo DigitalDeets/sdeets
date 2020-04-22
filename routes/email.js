@@ -69,13 +69,9 @@ module.exports = {
         } else {
             var tt = new Date().getTime()
             console.log('email sent to ' + mailOptions.to + ' at ' + new Date(tt));
-            
-            var accepted_length = info.accepted.length;
-            var rejected_length = info.rejected.length;
-            var pending_length  = info.pending.length;
-
+           
             //cb({success: true});
-            cb({success: true, response:info.response, accepted: accepted_length, rejected: rejected_length, pending:pending_length});
+            cb({success: true, response:info.response});
         }
     });
 
