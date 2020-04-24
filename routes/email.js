@@ -73,6 +73,8 @@ module.exports = {
                     messageId = info.messageId;
                     info_msg += ' ' + info.messageId 
                 }
+                
+                console.log(info_msg);
 
                 cb({success: true, messageId: messageId});
             }
