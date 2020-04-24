@@ -13,8 +13,6 @@ module.exports = {
     send:function( options, err, cb ){
           var template = swig.compileFile(__dirname + `/../templates/${options.template}.html`);
           
-          var sender_addres = 'School Deets <no-reply@schooldeets.com>';
-          
           if(options.template == 'post_notification'){
             var html = template({
                 receiverName: options.receiverName,
@@ -54,27 +52,30 @@ module.exports = {
 
           var mailOptions = {
             transport: transporter,
-            from: sender_addres, // sender address
+            from: '"School Deets" <no-reply@schooldeets.com>', // sender address
             to: options.receiver, // list of receivers
             subject: options.subject, // Subject line
             html: html
         };
 
         // send mail with defined transport object
-    transporter.sendMail(mailOptions, function(error, info) {
-        if (error) {
-            console.log('we got an error: ' + error);
-            err(error);
+        transporter.sendMail(mailOptions, function(error, info) {
+            if (error) {
+                console.log('sendMail error: ', error);
+                err(error);
+            } else {
+                var tt = new Date().getTime()
 
-        } else {
-            var tt = new Date().getTime()
-            console.log('email sent to ' + mailOptions.to + ' at ' + new Date(tt));
-            console.log(info);
-           
-            cb({success: true});
-        }
-    });
+                var info_msg = 'email sent to ' + mailOptions.to + ' at ' + new Date(tt);
 
+                var messageId  = '';
+                if (typeof info.messageId !== 'undefined'){
+                    messageId = info.messageId;
+                    info_msg += ' ' + info.messageId 
+                }
 
+                cb({success: true, messageId: messageId});
+            }
+        });
     }
 }
