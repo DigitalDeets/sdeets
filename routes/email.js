@@ -34,7 +34,15 @@ module.exports = {
                 postImage: options.postImage,
                 truncateText: options.truncateText,
                 incompleteRegistration: options.incompleteRegistration,
+                prospectiveParent: options.prospectiveParent,
                 adsPosts: options.adsPosts
+          });
+          
+          }else if(options.template == 'welcome_prospective_parent'){
+           var html = template({
+              receiverName: options.receiverName,
+              schoolName: options.schoolName,
+              content: options.content
           });
         
          }else if(options.template == 'post'){
