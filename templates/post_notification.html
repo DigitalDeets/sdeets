@@ -4,6 +4,8 @@
         <div style="text-align: center;margin:20px 0; font-weight: bold; line-height: 24px;">
             {% if incompleteRegistration %}
             Hello {{schoolName}} Parent, <span style="color:#ee6c34">{{senderName}}</span> has {{postType}} the following message to {{schoolName}} {{group}}
+            {% elseif prospectiveParent %}
+            Hello {{schoolName}} Prospective Parent, <span style="color:#ee6c34">{{schoolName}}</span> has {{postType}} the following message to {{group}}
             {% else %}
             Hello{% if receiverName %} {{receiverName}}{% endif %}, <span style="color:#ee6c34">{{senderName}}</span> {{postType}} the following message to <span style="color:#ee6c34">{{group}}</span>
             {% endif %}
@@ -43,13 +45,21 @@
         </div>
         {% endif %}
         
+        {% if prospectiveParent %}
+        <div style="margin:20px;">
+            <p>WHY SCHOOL DEETS? This school uses the School Deets system to share school related information with you.</p>
+            <p>WHAT IS SCHOOL DEETS? School Deets is a school engagement system designed to help school communities connect, communicate, and engage.</p>
+            <p>WHAT DO I NEED TO DO? If your child will be attending this school in the fall, you don't need to do anything currently. You will continue to receive emails from school to keep you informed of upcoming events and information. In the fall, you will learn more about how this school uses School Deets. If your child will not be attending this school in the fall, please let them know. They will remove you from their prospective parent list.</p>
+        </div>
+        {% endif %}
+        
         <div style="text-align: center; margin-top:30px;">
             {% if incompleteRegistration %}
             <a href="https://app.schooldeets.com/parent-registration?parent_id={{userId}}&post_id={{postUrl}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Set up my account and get connected!</a>
-            {% elseif prospectiveParent %}
+            {% elseif unregisteredParent %}
             <a href="https://app.schooldeets.com/sdpost/{{postUrl}}?parent_id={{userId}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Go to Post</a>
             {% else %}
-            <a href="https://sd-email.herokuapp.com/?postId={{postId}}&postUrl={{postUrl}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Go to Post</a>
+            <a href="https://sd-email.herokuapp.com/?postId={{postId}}&postUrl={{postUrl}}&userID={{userId}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Go to Post</a>
             {% endif %}
         </div>
         

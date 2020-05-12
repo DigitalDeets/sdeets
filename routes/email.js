@@ -35,6 +35,7 @@ module.exports = {
                 truncateText: options.truncateText,
                 incompleteRegistration: options.incompleteRegistration,
                 prospectiveParent: options.prospectiveParent,
+                unregisteredParent: options.unregisteredParent,
                 adsPosts: options.adsPosts
           });
           

@@ -16,7 +16,6 @@
         }
         else if (os == 'iOS'){
             button.href = 'https://itunes.apple.com/us/app/school-deets/id1109287736?mt=8';
-
         }
         else{
             button.remove();
@@ -28,9 +27,20 @@
     }
     else{
         button.remove();
-        var urlParam = getParameterByName('postUrl', window.location.href);
-        if (urlParam && urlParam.length){
-            window.location.href = `https://app.schooldeets.com/sdpost/${urlParam}`
+        var postUrl = getParameterByName('postUrl', window.location.href);
+        var userID = getParameterByName('userID', window.location.href);
+        
+        var postUrl = ''
+        if (postUrl && postUrl.length){
+            postUrl = 'https://app.schooldeets.com/sdpost/' + postUrl;
+            
+            if (userID && userID.length){
+                postUrl += '?parent_id=' + userID;
+            }
+        }
+        
+        if(postUrl){
+            window.location.href = postUrl;
         }
     }
 
