@@ -40,7 +40,7 @@
         }
         
         if(postRedirectURL){
-            window.location.href = postUrl;
+            window.location.href = postRedirectURL;
         }
     }
 
