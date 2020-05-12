@@ -30,16 +30,16 @@
         var postUrl = getParameterByName('postUrl', window.location.href);
         var userID = getParameterByName('userID', window.location.href);
         
-        var postUrl = ''
+        var postRedirectURL = '';
         if (postUrl && postUrl.length){
-            postUrl = 'https://app.schooldeets.com/sdpost/' + postUrl;
+            postRedirectURL = 'https://app.schooldeets.com/sdpost/' + postUrl;
             
             if (userID && userID.length){
-                postUrl += '?parent_id=' + userID;
+                postRedirectURL += '?parent_id=' + userID;
             }
         }
         
-        if(postUrl){
+        if(postRedirectURL){
             window.location.href = postUrl;
         }
     }
