@@ -40,12 +40,9 @@
         <div style="margin:20px;">
             <p>WHY SCHOOL DEETS? Your school has adopted the School Deets system to communicate with you.</p>
             <p>WHAT IS SCHOOL DEETS? School Deets is a parent and community engagement tool designed to help school communities connect, communicate, and engage.</p>
-            <p>WHAT DO I NEED TO DO? Set up an account. You will need your child's School Deets code or Student ID number.</p>
-            <p>THEN WHAT? Once you create your account you will be connected to more groups at your child's school and can easily stay informed about everything going on at your child's school.</p>
+            <p>WHAT DO I NEED TO DO? Set up an account for full access to the system. Once you create your account you can: access our mobile and web applications, manage your account preferences, view every image sent with every post, direct message school users, and access more school information from your school.</p>
         </div>
-        {% endif %}
-        
-        {% if prospectiveParent %}
+        {% elseif prospectiveParent %}
         <div style="margin:20px;">
             <p>WHY SCHOOL DEETS? This school uses the School Deets system to share school related information with you.</p>
             <p>WHAT IS SCHOOL DEETS? School Deets is a school engagement system designed to help school communities connect, communicate, and engage.</p>
@@ -55,7 +52,7 @@
         
         <div style="text-align: center; margin-top:30px;">
             {% if incompleteRegistration %}
-            <a href="https://app.schooldeets.com/parent-registration?parent_id={{userId}}&post_id={{postUrl}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Set up my account and get connected!</a>
+            <a href="https://app.schooldeets.com/parent-registration?parent_id={{userId}}&post_id={{postUrl}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Set up my account</a>
             {% elseif unregisteredParent %}
             <a href="https://app.schooldeets.com/sdpost/{{postUrl}}?parent_id={{userId}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Go to Post</a>
             {% else %}
