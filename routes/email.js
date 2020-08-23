@@ -11,9 +11,9 @@ var transporter = nodemailer.createTransport('SES', {
 
 module.exports = {
     send:function( options, err, cb ){
-          var template = swig.compileFile(__dirname + `/../templates/${options.template}.html`);
-          
-          if(options.template == 'post_notification'){
+        var template = swig.compileFile(__dirname + `/../templates/${options.template}.html`);
+
+        if(options.template == 'post_notification'){
             var html = template({
                 receiverName: options.receiverName,
                 senderName: options.senderName,
@@ -36,36 +36,33 @@ module.exports = {
                 incompleteRegistration: options.incompleteRegistration,
                 prospectiveParent: options.prospectiveParent,
                 unregisteredParent: options.unregisteredParent,
-                adsPosts: options.adsPosts
-          });
-          
-          }else if(options.template == 'welcome_prospective_parent'){
-           var html = template({
-              receiverName: options.receiverName,
-              schoolName: options.schoolName,
-              content: options.content
-          });
-        
-         }else if(options.template == 'post'){
-           var html = template({
-              receiverName: options.receiverName,
-              senderName: options.senderName,
-              content: options.content,
-              group: options.group,
-              postType: options.postType,
-              postId: options.postId,
-              userId: options.userId,
-              postUrl: options.postUrl
-          });
-         }
+                adsPosts: options.adsPosts,
+                dataImportPreference: options.dataImportPreference
+            });
 
-          var mailOptions = {
+        }else if(options.template == 'account_parent_invitation'){
+            var html = template({
+                receiverName: options.receiverName,
+                schoolName: options.schoolName,
+                userId: options.userId,
+                content: options.content
+            });
+
+        }else if(options.template == 'welcome_prospective_parent'){
+            var html = template({
+                receiverName: options.receiverName,
+                schoolName: options.schoolName,
+                content: options.content
+            });
+        }
+
+        var mailOptions = {
             transport: transporter,
-            from: '"School Deets" <no-reply@schooldeets.com>', // sender address
+            from: 'School Deets <no-reply@schooldeets.com>', // sender address
             to: options.receiver, // list of receivers
             subject: options.subject, // Subject line
             html: html
-        };
+        }
 
         // send mail with defined transport object
         transporter.sendMail(mailOptions, function(error, info) {

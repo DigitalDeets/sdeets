@@ -38,7 +38,11 @@
         
         {% if incompleteRegistration %}
         <div style="margin:20px;">
+            {% if dataImportPreference == "parents" %}
+            <p>WHY SCHOOL DEETS? {{schoolName}} has adopted the School Deets system to communicate with you.</p>
+            {% else %}
             <p>WHY SCHOOL DEETS? Your school has adopted the School Deets system to communicate with you.</p>
+            {% endif %}
             <p>WHAT IS SCHOOL DEETS? School Deets is a parent and community engagement tool designed to help school communities connect, communicate, and engage.</p>
             <p>WHAT DO I NEED TO DO? Set up an account for full access to the system. Once you create your account you can: access our mobile and web applications, manage your account preferences, view every image sent with every post, direct message school users, and access more school information from your school.</p>
         </div>
