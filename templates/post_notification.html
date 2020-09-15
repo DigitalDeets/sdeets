@@ -27,11 +27,17 @@
                     </table>
                 </div>
                 <div style="padding: 0 5%;">
-                    <div style="margin: 15px 0; font-size: 16px;">{{subject}}</div>
+                    <div style="margin: 15px 0; font-size: 16px;font-weight:bold;">{{subject}}</div>
                     {% if postImage %}
                     <div style="margin-bottom: 10px;"><img src="{{postImage}}" style="width: 100%;" alt=""/></div>
                     {% endif %}
+                    {% if postVideoLink %}
+                    <div style="margin: 15px 0;"><a href="{{postVideoLink}}" target="_blank" style="display: inline-block;color:#0c769d;"><img src="{{postVideoIcon}}" style="display: inline-block; height: 40px; margin-right:10px;vertical-align: middle;" alt=""><span>Watch the video</span></a></div>
+                    {% endif %}
                     <div style="position: relative; font-size: 14px; line-height: 20px;">{{content|safe}}</div>
+                    {% if postAttachmentLink %}
+                    <div style="margin-top: 15px;"><b>Attachment:</b><a href="{{postAttachmentLink}}" target="_blank" style="display: inline-block; margin-left:10px;"><img src="{{postAttachmentIcon}}" style="vertical-align: middle;" alt=""></a></div>
+                    {% endif %}
                 </div>                
             </div>
         </div>

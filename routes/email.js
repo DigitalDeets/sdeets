@@ -21,6 +21,7 @@ module.exports = {
                 content: options.content,
                 group: options.group,
                 postType: options.postType,
+                subject: options.subject,
                 postId: options.postId,
                 userId: options.userId,
                 userEmail: options.receiver,
@@ -32,6 +33,10 @@ module.exports = {
                 posterName: options.posterName,                    
                 postDate: options.postDate,
                 postImage: options.postImage,
+                postVideoLin: options.postVideoLink,
+                postVideoIcon: options.postVideoIcon,
+                postAttachmentLink: options.postAttachmentLink,
+                postAttachmentIcon: options.postAttachmentIcon,
                 truncateText: options.truncateText,
                 incompleteRegistration: options.incompleteRegistration,
                 prospectiveParent: options.prospectiveParent,
@@ -44,8 +49,7 @@ module.exports = {
             var html = template({
                 receiverName: options.receiverName,
                 schoolName: options.schoolName,
-                userId: options.userId,
-                content: options.content
+                userId: options.userId
             });
 
         }else if(options.template == 'welcome_prospective_parent'){
