@@ -71,12 +71,12 @@
         </div>
         
         {% if adsPosts.ids %}
-        <div style="margin: 30px 0 5px;text-align:center;font-size: 16px;line-height: 22px;font-style:italic;">Thank you to our local community partners for your support</div>
+        <div style="margin: 30px 0 5px;text-align:center;font-size: 16px;line-height: 22px;font-style:italic;">Thank you to our local school sponsors for your support</div>
         <table style="width:100%;margin:5px 0;border-spacing:5px;">
             <tr>
                 {% for post in adsPosts.posts%}
                 <td style="width:{{adsPosts.width}}%;background-color:#ffffff;border:1px solid #e6e6e6;">
-                    <a href="https://app.schooldeets.com/dashboard/partner-post/?id={{post.id}}&user_id={{userId}}" style="display:block;text-decoration:none;color: #333333; padding: 10px 5px 5px;height:100%;">
+                    <a href="https://app.schooldeets.com/dashboard/sponsor-post/?id={{post.id}}&user_id={{userId}}" style="display:block;text-decoration:none;color: #333333; padding: 10px 5px 5px;height:100%;">
                         {% if post.image %}
                         <span style="display:block;height:150px;text-align:center;line-height:150px;"><img style="display:inline-block;max-width:100%;max-height:150px;vertical-align:middle;" src="{{post.image}}" /></span> 
                         {% endif %}  
