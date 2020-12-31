@@ -53,7 +53,7 @@ module.exports = {
                 organizationAvatar: options.organizationAvatar,
                 schoolName: options.schoolName,
                 content: options.content,
-                authorName: options.autorName,
+                authorName: options.authorName,
                 authorAvatar: options.authorAvatar,                   
                 promotionDate: options.promotionDate,
                 promotionImage: options.promotionImage,
