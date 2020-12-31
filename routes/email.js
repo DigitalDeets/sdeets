@@ -44,6 +44,26 @@ module.exports = {
                 adsPosts: options.adsPosts,
                 dataImportPreference: options.dataImportPreference
             });
+            
+        }else if(options.template == 'promotion_notification'){
+            var html = template({
+                subject: options.subject,
+                receiverName: options.receiverName,
+                organizationName: options.organizationName,
+                organizationAvatar: options.organizationAvatar,
+                schoolName: options.schoolName,
+                content: options.content,
+                authorName: options.autorName,
+                authorAvatar: options.authorAvatar,                   
+                promotionDate: options.promotionDate,
+                promotionImage: options.promotionImage,
+                promotionAttachmentLink: options.promotionAttachmentLink,
+                promotionAttachmentIcon: options.promotionAttachmentIcon,
+                promotionTitleEncode: options.promotionTitleEncode,
+                promotionURL: options.promotionURL,
+                promotionURLEncode: options.promotionURLEncode,
+                addThisProfileID: options.addThisProfileID
+            });
 
         }else if(options.template == 'account_parent_invitation'){
             var html = template({
