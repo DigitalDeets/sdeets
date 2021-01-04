@@ -59,10 +59,11 @@ module.exports = {
                 promotionImage: options.promotionImage,
                 promotionAttachmentLink: options.promotionAttachmentLink,
                 promotionAttachmentIcon: options.promotionAttachmentIcon,
-                promotionTitleEncode: options.promotionTitleEncode,
                 promotionURL: options.promotionURL,
-                promotionURLEncode: options.promotionURLEncode,
-                addThisProfileID: options.addThisProfileID
+                promotionShareURL: options.promotionShareURL,
+                appURL: options.appURL,
+                postId: options.postId,
+                userId: options.userId,
             });
 
         }else if(options.template == 'account_parent_invitation'){
