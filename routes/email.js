@@ -64,6 +64,7 @@ module.exports = {
                 appURL: options.appURL,
                 postId: options.postId,
                 userId: options.userId,
+                userType: options.userType
             });
 
         }else if(options.template == 'account_parent_invitation'){
