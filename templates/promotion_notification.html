@@ -10,9 +10,9 @@
                 <div style="padding: 25px 25px 0px 5%;">
                     <table>
                         <tr>
-                            <td style="width: 60px; vertical-align: top;"><img src="{{organizationAvatar}}" alt="" style="display: inline-block; width:40px; height:40px; margin-top: 4px; border-radius:50%; box-shadow:0 2px 5px 0 rgba(0,0,0,.26);"></td>
+                            <td style="width: 60px; vertical-align: top;"><img src="{{organizationAvatar}}" alt="" style="display: inline-block; width:40px; height:40px; margin-top: 4px;"></td>
                             <td>
-                            <span style="display: block; font-weight: bold;"><img src="{{organizationAvatar}}" width="14" style="vertical-align: middle;" alt=""/>&nbsp;<span style="vertical-align: middle;">{{organizationName}}</span></span><span style="display: block;"><img src="{{authorAvatar}}" width="14" style="vertical-align: middle;" alt="" />&nbsp;<span style="vertical-align: middle;">{{authorName}}</span></span><span style="display: block;"><img src="https://app.schooldeets.com/wp-content/themes/sdthm/img/clock.png" width="14" style="vertical-align: middle;" alt="" />&nbsp;<span style="vertical-align: middle;">{{promotionDate}}</span></span>
+                            <span style="display: block; font-weight: bold;"><span style="vertical-align: middle;">{{organizationName}}</span></span><span style="display: block;"><img src="https://app.schooldeets.com/wp-content/themes/sdthm/img/clock.png" width="14" style="vertical-align: middle;" alt="" />&nbsp;<span style="vertical-align: middle;">{{promotionDate}}</span></span>
                             </td>
                         </tr>
                     </table>
@@ -20,7 +20,7 @@
                 <div style="padding: 0 5%;">
                     <div style="margin: 15px 0; font-size: 16px;font-weight:bold;">{{subject}}</div>
                     {% if promotionImage %}
-                    <div style="margin-bottom: 10px;"><img src="{{promotionImage}}" style="width: 100%;" alt=""/></div>
+                    <div style="margin-bottom: 10px; text-align:center;"><img src="{{promotionImage}}" style="max-width: 100%;" alt=""/></div>
                     {% endif %}
                     <div style="position: relative; font-size: 14px; line-height: 20px;">{{content|safe}}</div>
                     {% if promotionAttachmentLink %}
