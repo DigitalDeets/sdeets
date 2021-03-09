@@ -62,9 +62,9 @@
         
         <div style="text-align: center; margin-top:30px;">
             {% if incompleteRegistration %}
-            <a href="https://app.schooldeets.com/parent-registration?parent_id={{userId}}&post_id={{postUrl}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Set up my account</a>
+            <a href="{{appURL}}/parent-registration?parent_id={{userId}}&post_id={{postUrl}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Set up my account</a>
             {% elseif unregisteredParent %}
-            <a href="https://app.schooldeets.com/sdpost/{{postUrl}}?parent_id={{userId}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Go to Post</a>
+            <a href="{{appURL}}/sdpost/{{postUrl}}?parent_id={{userId}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Go to Post</a>
             {% else %}
             <a href="https://sd-email.herokuapp.com/?postId={{postId}}&postUrl={{postUrl}}&userID={{userId}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Go to Post</a>
             {% endif %}
@@ -76,7 +76,7 @@
             <tr>
                 {% for post in adsPosts.posts%}
                 <td style="width:{{adsPosts.width}}%;background-color:#ffffff;border:1px solid #e6e6e6;">
-                    <a href="https://app.schooldeets.com/dashboard/promotion/?id={{post.id}}&u={{userId}}&t=e" style="display:block;text-decoration:none;color: #333333; padding: 10px 5px 5px;height:100%;">
+                    <a href="{{appURL}}/dashboard/promotion/?id={{post.id}}&u={{userId}}&t=e" style="display:block;text-decoration:none;color: #333333; padding: 10px 5px 5px;height:100%;">
                         {% if post.image %}
                         <span style="display:block;height:150px;text-align:center;line-height:150px;"><img style="display:inline-block;max-width:100%;max-height:150px;vertical-align:middle;" src="{{post.image}}" /></span> 
                         {% endif %}  
@@ -116,8 +116,8 @@
         </div>
     </div>
     {% if adsPosts.ids %}
-    <img src="https://app.schooldeets.com/email_pixel/post_read.php?parent_id={{userId}}&post_id={{postId}}&ads_post_id={{adsPosts.ids}}&image=tracking.png" alt="" width="1" height="1" />
+    <img src="{{appURL}}/email_pixel/post_read.php?parent_id={{userId}}&post_id={{postId}}&ads_post_id={{adsPosts.ids}}&image=tracking.png" alt="" width="1" height="1" />
     {% else %}
-    <img src="https://app.schooldeets.com/email_pixel/post_read.php?parent_id={{userId}}&post_id={{postId}}&image=tracking.png" alt="" width="1" height="1" />
+    <img src="{{appURL}}/email_pixel/post_read.php?parent_id={{userId}}&post_id={{postId}}&image=tracking.png" alt="" width="1" height="1" />
     {% endif %}
 </body>

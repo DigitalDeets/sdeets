@@ -42,7 +42,8 @@ module.exports = {
                 prospectiveParent: options.prospectiveParent,
                 unregisteredParent: options.unregisteredParent,
                 adsPosts: options.adsPosts,
-                dataImportPreference: options.dataImportPreference
+                dataImportPreference: options.dataImportPreference,
+                appURL: options.appURL
             });
             
         }else if(options.template == 'promotion_notification'){
@@ -71,7 +72,8 @@ module.exports = {
             var html = template({
                 receiverName: options.receiverName,
                 schoolName: options.schoolName,
-                userId: options.userId
+                userId: options.userId,
+                appURL: options.appURL
             });
 
         }else if(options.template == 'welcome_prospective_parent'){
