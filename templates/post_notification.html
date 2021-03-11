@@ -3,7 +3,7 @@
     <div style="background:#f6f6f6;padding:2px 2% 15px;font-size:16px;line-height: 20px;font-family:'Arial', 'Helvetica-light', sans-serif;">
         <div style="text-align: center;margin:20px 0; font-weight: bold; line-height: 24px;">
             {% if incompleteRegistration %}
-            Hello {{schoolName}} Parent, <span style="color:#ee6c34">{{senderName}}</span> has {{postType}} the following message to {{schoolName}} {{group}}
+            Hello {% if receiverName %}{{receiverName}}{% else %}{{schoolName}} community member{% endif %}, <span style="color:#ee6c34">{{senderName}}</span> has {{postType}} the following message to {{schoolName}} {{group}}
             {% elseif prospectiveParent %}
             Hello {{schoolName}} Prospective Parent, <span style="color:#ee6c34">{{schoolName}}</span> has {{postType}} the following message to {{group}}
             {% else %}
@@ -45,12 +45,11 @@
         {% if incompleteRegistration %}
         <div style="margin:20px;">
             {% if dataImportPreference == "parents" %}
-            <p>WHY SCHOOL DEETS? {{schoolName}} has adopted the School Deets system to communicate with you.</p>
+            <p>WHY SCHOOL DEETS? {{schoolName}} has adopted the School Deets system to communicate with you. You can stay up to date with what’s happening at the school.</p>
             {% else %}
-            <p>WHY SCHOOL DEETS? Your school has adopted the School Deets system to communicate with you.</p>
+            <p>WHY SCHOOL DEETS? This school has adopted the School Deets system to communicate with you. You can stay up to date with what’s happening at the school.</p>
             {% endif %}
-            <p>WHAT IS SCHOOL DEETS? School Deets is a parent and community engagement tool designed to help school communities connect, communicate, and engage.</p>
-            <p>WHAT DO I NEED TO DO? Set up an account for full access to the system. Once you create your account you can: access our mobile and web applications, manage your account preferences, view every image sent with every post, direct message school users, and access more school information from your school.</p>
+            <p>WHAT DO I NEED TO DO? Set up an account for full access to the system. Once you create your account, you can: access our mobile and web applications, manage your account preferences, view every image sent with every post, and access more school information from the school.</p>
         </div>
         {% elseif prospectiveParent %}
         <div style="margin:20px;">
