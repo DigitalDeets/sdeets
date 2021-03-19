@@ -1,6 +1,6 @@
 {
   "name": "sdeets",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
@@ -14,7 +14,6 @@
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
     "franc": "^2.0.0",
-    "newrelic": "^1.27.1",
     "nodemailer": "^0.7.1",
     "nodemailer-ses-transport": "^1.5.1",
     "nodemailer-smtp-pool": "^2.8.2",

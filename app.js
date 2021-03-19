@@ -15,9 +15,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(cors());
 
-if (process.env.isProd){
+/*if (process.env.isProd){
   require('newrelic');
-}
+}*/
 
 
 

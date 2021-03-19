@@ -82,6 +82,12 @@ module.exports = {
                 schoolName: options.schoolName,
                 content: options.content
             });
+        }else if(options.template == 'influencer_invitation'){
+            var html = template({
+                receiverName: options.receiverName,
+                schoolName: options.schoolName,
+                agreeLink: options.agreeLink
+            });
         }
 
         var mailOptions = {
