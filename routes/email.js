@@ -17,7 +17,6 @@ module.exports = {
             var html = template({
                 receiverName: options.receiverName,
                 senderName: options.senderName,
-                senderPosition: options.senderPosition,
                 content: options.content,
                 group: options.group,
                 postType: options.postType,
@@ -37,7 +36,6 @@ module.exports = {
                 postVideoIcon: options.postVideoIcon,
                 postAttachmentLink: options.postAttachmentLink,
                 postAttachmentIcon: options.postAttachmentIcon,
-                truncateText: options.truncateText,
                 incompleteRegistration: options.incompleteRegistration,
                 prospectiveParent: options.prospectiveParent,
                 unregisteredParent: options.unregisteredParent,
@@ -46,6 +44,30 @@ module.exports = {
                 appURL: options.appURL
             });
             
+        }else if(options.template == 'post_notification_student'){
+            var html = template({
+                receiverName: options.receiverName,
+                senderName: options.senderName,
+                content: options.content,
+                group: options.group,
+                postType: options.postType,
+                subject: options.subject,
+                postId: options.postId,
+                studentId: options.studentId,
+                groups: options.groups,
+                schoolIcon: options.schoolIcon,
+                schoolName: options.schoolName,
+                authorAvatar: options.authorAvatar,
+                posterName: options.posterName,                    
+                postDate: options.postDate,
+                postImage: options.postImage,
+                postVideoLink: options.postVideoLink,
+                postVideoIcon: options.postVideoIcon,
+                postAttachmentLink: options.postAttachmentLink,
+                postAttachmentIcon: options.postAttachmentIcon,
+                appURL: options.appURL
+            });
+  
         }else if(options.template == 'promotion_notification'){
             var html = template({
                 subject: options.subject,
