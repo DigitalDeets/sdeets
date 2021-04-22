@@ -110,6 +110,11 @@ module.exports = {
                 schoolName: options.schoolName,
                 agreeLink: options.agreeLink
             });
+        }else if(options.template == 'notification'){
+            var html = template({
+                notificationHeader: options.notificationHeader,
+                content: options.content
+            });
         }
 
         var mailOptions = {
