@@ -112,7 +112,7 @@ module.exports = {
             });
         }else if(options.template == 'notification'){
             var html = template({
-                notificationHeader: options.notificationHeader,
+                headerContent: options.headerContent,
                 content: options.content
             });
         }
