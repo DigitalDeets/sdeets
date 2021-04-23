@@ -6,12 +6,18 @@
         </div>  
         
         <div style="background:#ffffff; color: #333333;">
-            <div style="text-align: left; padding: 25px 5%; position:relative; font-size: 14px; max-width: 880px; margin: 0 auto;">
-                <div style="font-size: 14px; line-height: 20px;">
+            <div style="text-align: left; padding: 25px 0; font-size: 14px; max-width: 880px; margin: 0 auto;">
+                <div style="font-size: 14px; line-height: 20px; padding: 0 5%;">
                     {{content|safe}}  
                 </div>
             </div>
         </div>
+        
+        {% if buttonLink %}
+        <div style="text-align: center; margin-top:30px;">
+            <a href="{{buttonLink}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background:#f06e34;color: #ffffff;border-radius: 4px;" target="_blank">{{buttonLabel}}</a>
+        </div>
+        {% endif %}
 
         <div style="border-top: 1px solid #cac5c5; text-align: center; margin-top:30px;">
             <div style="margin-top:30px">

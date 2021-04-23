@@ -113,7 +113,9 @@ module.exports = {
         }else if(options.template == 'notification'){
             var html = template({
                 headerContent: options.headerContent,
-                content: options.content
+                content: options.content,
+                buttonLink: options.buttonLink,
+                buttonLabel: options.buttonLabel
             });
         }
 
