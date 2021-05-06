@@ -15,7 +15,10 @@
         
         {% if buttonLink %}
         <div style="text-align: center; margin-top:30px;">
-            <a href="{{buttonLink}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background:#f06e34;color: #ffffff;border-radius: 4px;" target="_blank">{{buttonLabel}}</a>
+            <a href="{{buttonLink}}" style="display:inline-block;text-decoration:none;min-width:110px;padding:12px 15px;text-align:center;background:#f06e34;color:#ffffff;border-radius:4px;" target="_blank">{{buttonLabel}}</a>
+            {% if buttonLink2 %}
+            <a href="{{buttonLink2}}" style="display:inline-block;text-decoration:none;min-width:110px;margin-left:15px;padding:12px 15px;text-align:center;background:#f06e34;color:#ffffff;border-radius:4px;" target="_blank">{{buttonLabel2}}</a>
+            {% endif %}
         </div>
         {% endif %}
 

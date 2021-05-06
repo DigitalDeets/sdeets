@@ -115,7 +115,9 @@ module.exports = {
                 headerContent: options.headerContent,
                 content: options.content,
                 buttonLink: options.buttonLink,
-                buttonLabel: options.buttonLabel
+                buttonLabel: options.buttonLabel,
+                buttonLink2: options.buttonLink2,
+                buttonLabel2: options.buttonLabel2
             });
         }
 
