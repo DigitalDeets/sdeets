@@ -21,7 +21,7 @@
                             {% for postGroup in groups %}
                             <span style="display: block;"><img src="{{postGroup.avatar}}" width="14" style="vertical-align: middle;" alt="" />&nbsp;<span style="vertical-align: middle;">{{postGroup.name}}</span></span>
                             {% endfor %} 
-                            <span style="display: block; font-weight: bold;"><img src="{{schoolIcon}}" width="14" style="vertical-align: middle;" alt=""/>&nbsp;<span style="vertical-align: middle;">{{schoolName}}</span></span><span style="display: block;"><img src="{{authorAvatar}}" width="14" style="vertical-align: middle;" alt="" />&nbsp;<span style="vertical-align: middle;">{{posterName}}</span></span><span style="display: block;"><img src="https://app.schooldeets.com/wp-content/themes/sdthm/img/clock.png" width="14" style="vertical-align: middle;" alt="" />&nbsp;<span style="vertical-align: middle;">{{postDate}}</span></span>
+                            <span style="display: block; font-weight: bold;"><img src="{{schoolIcon}}" width="14" style="vertical-align: middle;" alt=""/>&nbsp;<span style="vertical-align: middle;">{{schoolName}}</span></span><span style="display: block;"><img src="{{authorAvatar}}" width="14" style="vertical-align: middle;" alt="" />&nbsp;<span style="vertical-align: middle;">{{posterName}}</span></span><span style="display: block;"><img src="{{appURL}}/wp-content/themes/sdthm/img/clock.png" width="14" style="vertical-align: middle;" alt="" />&nbsp;<span style="vertical-align: middle;">{{postDate}}</span></span>
                             </td>
                         </tr>
                     </table>
@@ -94,11 +94,11 @@
             <div style="font-size: 16px;line-height: 22px;font-style:italic;">Explore our Community Listings</div>
             <div>
                 <a href="https://dittofi.com/409#/directory?CategoryDefault=AfterSchool-Athletics" target="_blank" style="display:inline-block;margin: 5px 10px 0;text-decoration:none;">
-                    <img src="https://app.schooldeets.com/wp-content/uploads/2021/06/after_achool_athletics-300x300.jpg" width="120"/>
+                    <img src="{{appURL}}/wp-content/uploads/2021/06/after_achool_athletics-300x300.jpg" width="120"/>
                 </a>
                 
                 <a href="https://dittofi.com/409#/directory?CategoryDefault=Virtual%20Camp" target="_blank" style="display:inline-block;margin: 5px 10px 0;text-decoration:none;">
-                    <img src="https://app.schooldeets.com/wp-content/uploads/2021/04/Virtual-Camps-300x300.jpg" width="120"/>
+                    <img src="{{appURL}}/wp-content/uploads/2021/04/Virtual-Camps-300x300.jpg" width="120"/>
                 </a>
             </div>
         </div>
@@ -120,14 +120,14 @@
         
         <div style="margin-top:10px;font-size:12px;color:#b3b3b1;text-align:center;">
             {% if incompleteRegistration %}
-            If you prefer to be removed from this list, please contact your school directly.<br/>To stop receiving email notifications, go to <a style="color: #b3b3b1;text-decoration:underline;" href="https://app.schooldeets.com/unsubscribe?email={{userEmail}}&id={{userId}}" target="_blank">Unsubscribe</a>
+            If you prefer to be removed from this list, please contact your school directly.<br/>To stop receiving email notifications, go to <a style="color: #b3b3b1;text-decoration:underline;" href="{{appURL}}/unsubscribe?email={{userEmail}}&id={{userId}}" target="_blank">Unsubscribe</a>
             {% elseif prospectiveParent %}
-            If you prefer to be removed from this list, please contact your school directly.<br/>To stop receiving email notifications, go to <a style="color: #b3b3b1;text-decoration:underline;" href="https://app.schooldeets.com/unsubscribe?email={{userEmail}}&id={{userId}}" target="_blank">Unsubscribe</a>
+            If you prefer to be removed from this list, please contact your school directly.<br/>To stop receiving email notifications, go to <a style="color: #b3b3b1;text-decoration:underline;" href="{{appURL}}/unsubscribe?email={{userEmail}}&id={{userId}}" target="_blank">Unsubscribe</a>
             {% else %}
-            If you prefer to be removed from this list, please contact your school directly.<br/>To manage your push and email notification preferences, go to <a style="color: #b3b3b1;text-decoration:underline;" href="https://app.schooldeets.com/dashboard/notification-preferences" target="_blank">Manage notifications</a>
+            If you prefer to be removed from this list, please contact your school directly.<br/>To manage your push and email notification preferences, go to <a style="color: #b3b3b1;text-decoration:underline;" href="{{appURL}}/dashboard/notification-preferences" target="_blank">Manage notifications</a>
             {% endif %}
             <br/><br/>
-            Please review our updated <a style="color: #b3b3b1;text-decoration:underline;" href="https://www.schooldeets.com/terms-of-use">Terms of Service</a> and <a style="color: #b3b3b1;text-decoration:underline;" href="https://www.schooldeets.com/privacy-policy">Privacy Policy</a>.
+            Please review our updated <a style="color: #b3b3b1;text-decoration:underline;" href="https://www.digitaldeets.com/terms-of-use">Terms of Service</a> and <a style="color: #b3b3b1;text-decoration:underline;" href="https://www.digitaldeets.com/privacy-policy">Privacy Policy</a>.
         </div>
     </div>
     {% if adsPosts.ids %}
