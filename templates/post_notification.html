@@ -44,17 +44,17 @@
         {% if incompleteRegistration %}
         <div style="margin:20px;">
             {% if dataImportPreference == "parents" %}
-            <p>WHY DIGITALDEETS? {{schoolName}} has adopted the DigitalDeets system to communicate with you. You can stay up to date with what’s happening at the school.</p>
+            <p>WHY DIGITALDEETS? {{schoolName}} has adopted the DigitalDeets system to communicate with you. You can stay up to date with what’s happening at the organization.</p>
             {% else %}
-            <p>WHY DIGITALDEETS? This school has adopted the DigitalDeets system to communicate with you. You can stay up to date with what’s happening at the school.</p>
+            <p>WHY DIGITALDEETS? This organization has adopted the DigitalDeets system to communicate with you. You can stay up to date with what’s happening at the organization.</p>
             {% endif %}
-            <p>WHAT DO I NEED TO DO? Set up an account for full access to the system. Once you create your account, you can: access our mobile and web applications, manage your account preferences, view every image sent with every post, and access more school information from the school.</p>
+            <p>WHAT DO I NEED TO DO? Set up an account for full access to the system. Once you create your account, you can: access our mobile and web applications, manage your account preferences, view every image sent with every post, and access more organization information from the organization.</p>
         </div>
         {% elseif prospectiveParent %}
         <div style="margin:20px;">
-            <p>WHY DIGITALDEETS? This school uses the DigitalDeets system to share school related information with you.</p>
-            <p>WHAT IS DIGITALDEETS? DigitalDeets is a school engagement system designed to help school communities connect, communicate, and engage.</p>
-            <p>WHAT DO I NEED TO DO? If your child will be attending this school in the fall, you don't need to do anything currently. You will continue to receive emails from school to keep you informed of upcoming events and information. In the fall, you will learn more about how this school uses DigitalDeets. If your child will not be attending this school in the fall, please let them know. They will remove you from their prospective parent list.</p>
+            <p>WHY DIGITALDEETS? This organization uses the DigitalDeets system to share organization related information with you.</p>
+            <p>WHAT IS DIGITALDEETS? DigitalDeets is a organization engagement system designed to help organization communities connect, communicate, and engage.</p>
+            <p>WHAT DO I NEED TO DO? If your child will be attending this organization in the fall, you don't need to do anything currently. You will continue to receive emails from organization to keep you informed of upcoming events and information. In the fall, you will learn more about how this organization uses DigitalDeets. If your child will not be attending this organization in the fall, please let them know. They will remove you from their prospective parent list.</p>
         </div>
         {% endif %}
         
@@ -92,12 +92,16 @@
         <div style="margin: 15px 0 5px;text-align:center;">
             <div style="font-size: 16px;line-height: 22px;font-style:italic;">Explore our Community Listings</div>
             <div>
+                <a href="https://dittofi.com/409#/directory?CategoryDefault=AfterSchool-TheArts" target="_blank" style="display:inline-block;margin: 5px 10px 0;text-decoration:none;">
+                    <img src="{{appURL}}/wp-content/uploads/2021/07/after_achool_arts-150x150.png" width="120"/>
+                </a>
+                
                 <a href="https://dittofi.com/409#/directory?CategoryDefault=AfterSchool-Athletics" target="_blank" style="display:inline-block;margin: 5px 10px 0;text-decoration:none;">
-                    <img src="{{appURL}}/wp-content/uploads/2021/06/after_achool_athletics-300x300.jpg" width="120"/>
+                    <img src="{{appURL}}/wp-content/uploads/2021/06/after_achool_athletics-150x150.jpg" width="120"/>
                 </a>
                 
                 <a href="https://dittofi.com/409#/directory?CategoryDefault=Virtual%20Camp" target="_blank" style="display:inline-block;margin: 5px 10px 0;text-decoration:none;">
-                    <img src="{{appURL}}/wp-content/uploads/2021/04/Virtual-Camps-300x300.jpg" width="120"/>
+                    <img src="{{appURL}}/wp-content/uploads/2021/04/Virtual-Camps-150x150.jpg" width="120"/>
                 </a>
             </div>
         </div>
@@ -115,15 +119,15 @@
             </div>
         </div>
         
-        <div style="text-align: center; color: #b3b3b1; font-size:12px">Sent by {{schoolName}} using the DigitalDeets system, 4041 S Narcissus Way, Denver, CO 80237</div>
+        <div style="text-align: center; color: #b3b3b1; font-size:12px">Sent by {{schoolName}} using the DigitalDeets system, 2432 S. Downing Street, Suite 105 Denver, CO 80210</div>
         
         <div style="margin-top:10px;font-size:12px;color:#b3b3b1;text-align:center;">
             {% if incompleteRegistration %}
-            If you prefer to be removed from this list, please contact your school directly.<br/>To stop receiving email notifications, go to <a style="color: #b3b3b1;text-decoration:underline;" href="{{appURL}}/unsubscribe?email={{userEmail}}&id={{userId}}" target="_blank">Unsubscribe</a>
+            If you prefer to be removed from this list, please contact your organization directly.<br/>To stop receiving email notifications, go to <a style="color: #b3b3b1;text-decoration:underline;" href="{{appURL}}/unsubscribe?email={{userEmail}}&id={{userId}}" target="_blank">Unsubscribe</a>
             {% elseif prospectiveParent %}
-            If you prefer to be removed from this list, please contact your school directly.<br/>To stop receiving email notifications, go to <a style="color: #b3b3b1;text-decoration:underline;" href="{{appURL}}/unsubscribe?email={{userEmail}}&id={{userId}}" target="_blank">Unsubscribe</a>
+            If you prefer to be removed from this list, please contact your organization directly.<br/>To stop receiving email notifications, go to <a style="color: #b3b3b1;text-decoration:underline;" href="{{appURL}}/unsubscribe?email={{userEmail}}&id={{userId}}" target="_blank">Unsubscribe</a>
             {% else %}
-            If you prefer to be removed from this list, please contact your school directly.<br/>To manage your push and email notification preferences, go to <a style="color: #b3b3b1;text-decoration:underline;" href="{{appURL}}/dashboard/notification-preferences" target="_blank">Manage notifications</a>
+            If you prefer to be removed from this list, please contact your organization directly.<br/>To manage your push and email notification preferences, go to <a style="color: #b3b3b1;text-decoration:underline;" href="{{appURL}}/dashboard/notification-preferences" target="_blank">Manage notifications</a>
             {% endif %}
             <br/><br/>
             Please review our updated <a style="color: #b3b3b1;text-decoration:underline;" href="https://www.digitaldeets.com/terms-of-use">Terms of Service</a> and <a style="color: #b3b3b1;text-decoration:underline;" href="https://www.digitaldeets.com/privacy-policy">Privacy Policy</a>.
