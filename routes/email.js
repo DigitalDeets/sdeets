@@ -123,7 +123,7 @@ module.exports = {
 
         var mailOptions = {
             transport: transporter,
-            from: 'DigitalDeets <no-reply@schooldeets.com>', // sender address
+            from: 'School Deets <no-reply@schooldeets.com>', // sender address
             to: options.receiver, // list of receivers
             subject: options.subject, // Subject line
             html: html
