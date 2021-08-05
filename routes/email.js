@@ -120,14 +120,22 @@ module.exports = {
                 buttonLabel2: options.buttonLabel2
             });
         }
+        
+        var sender_name     = 'Digital Deets';
+        var sender_email    = 'no-reply@digitaldeets.com';
+        var sender_address  = sender_name + ' <' + sender_email + '>';
+        
+        console.log(sender_address);
 
         var mailOptions = {
-            transport: transporter,
-            from: 'School Deets <no-reply@schooldeets.com>', // sender address
-            to: options.receiver, // list of receivers
-            subject: options.subject, // Subject line
-            html: html
+            transport:  transporter,
+            from:       sender_address,
+            to:         options.receiver,
+            subject:    options.subject,
+            html:       html
         }
+        
+        console.log(sender_address);
 
         // send mail with defined transport object
         transporter.sendMail(mailOptions, function(error, info) {
