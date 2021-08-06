@@ -6,7 +6,7 @@ var ses = require('nodemailer-ses-transport');
 var transporter = nodemailer.createTransport('SES', {
     AWSAccessKeyID: process.env.AWS_KEY,
     AWSSecretKey: process.env.AWS_SECRET,
-    region: 'us-west-2' 
+    region: process.env.AWS_REGION 
 });
 
 module.exports = {
@@ -121,12 +121,19 @@ module.exports = {
             });
         }
         
-        var sender_name     = 'Digital Deets';
-        var sender_email    = 'no-reply@digitaldeets.com';
+        var sender_name  = process.env.SENDER_NAME;
+        var sender_email = process.env.SENDER_EMAIL;
+        
+        //if set option sender_name and sender_email, don't use default
+        if (typeof options.SenderName !== 'undefined' && typeof options.SenderEmail !== 'undefined'){
+            if (options.SenderName && options.SenderEmail){
+                sender_name  = options.SenderName;
+                sender_email = options.SenderEmail;
+            }
+        }
+        
         var sender_address  = sender_name + ' <' + sender_email + '>';
         
-        console.log(sender_address);
-
         var mailOptions = {
             transport:  transporter,
             from:       sender_address,
@@ -134,8 +141,6 @@ module.exports = {
             subject:    options.subject,
             html:       html
         }
-        
-        console.log(sender_address);
 
         // send mail with defined transport object
         transporter.sendMail(mailOptions, function(error, info) {
