@@ -44,16 +44,16 @@
         {% if incompleteRegistration %}
         <div style="margin:20px;">
             {% if dataImportPreference == "parents" %}
-            <p>WHY DIGITALDEETS? {{schoolName}} has adopted the Digital Deets system to communicate with you. You can stay up to date with what’s happening at the organization.</p>
+            <p>WHY DIGITAL DEETS? {{schoolName}} has adopted the Digital Deets system to communicate with you. You can stay up to date with what’s happening at the organization.</p>            
             {% else %}
-            <p>WHY DIGITALDEETS? This organization has adopted the Digital Deets system to communicate with you. You can stay up to date with what’s happening at the organization.</p>
+            <p>WHY DIGITAL DEETS? This organization has adopted the Digital Deets system to communicate with you. You can stay up to date with what’s happening at the organization.</p>
             {% endif %}
-            <p>WHAT DO I NEED TO DO? Set up an account for full access to the system. Once you create your account, you can: access our mobile and web applications, manage your account preferences, view every image sent with every post, and access more organization information from the organization.</p>
+            <p>WHAT DO I NEED TO DO? Set up an account for full access to the system. Once you create your account, you can: access our mobile and web applications, manage your account preferences, view every image sent with every post, and access more information from your organization.</p>
         </div>
         {% elseif prospectiveParent %}
         <div style="margin:20px;">
-            <p>WHY DIGITALDEETS? This organization uses the Digital Deets system to share organization related information with you.</p>
-            <p>WHAT IS DIGITALDEETS? Digital Deets is a organization engagement system designed to help organization communities connect, communicate, and engage.</p>
+            <p>WHY DIGITAL DEETS? This organization uses the Digital Deets system to share organization related information with you.</p>
+            <p>WHAT IS DIGITAL DEETS? Digital Deets is a organization engagement system designed to help organization communities connect, communicate, and engage.</p>
             <p>WHAT DO I NEED TO DO? If your child will be attending this organization in the fall, you don't need to do anything currently. You will continue to receive emails from organization to keep you informed of upcoming events and information. In the fall, you will learn more about how this organization uses Digital Deets. If your child will not be attending this organization in the fall, please let them know. They will remove you from their prospective parent list.</p>
         </div>
         {% endif %}
@@ -69,7 +69,7 @@
         </div>
         
         {% if adsPosts.ids %}
-        <div style="margin: 30px 0 5px;text-align:center;font-size: 16px;line-height: 22px;font-style:italic;">Check out the latest Community Promotions from your sponsors</div>
+        <div style="margin: 30px 0 5px;text-align:center;font-size: 16px;line-height: 22px;font-style:italic;">Check out the latest community promotions</div>
         <table style="width:100%;margin:5px 0;border-spacing:5px;">
             <tr>
                 {% for post in adsPosts.posts%}
