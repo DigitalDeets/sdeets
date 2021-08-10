@@ -62,9 +62,9 @@
             {% if incompleteRegistration %}
             <a href="{{appURL}}/parent-registration?parent_id={{userId}}&post_id={{postUrl}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Set up my account</a>
             {% elseif unregisteredParent %}
-            <a href="{{appURL}}/sdpost/{{postUrl}}?parent_id={{userId}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Go to Post</a>
+            <a href="{{appURL}}/sdpost/{{postUrl}}?u={{userId}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Go to Post</a>
             {% else %}
-            <a href="https://sd-email.herokuapp.com/?postId={{postId}}&postUrl={{postUrl}}&userID={{userId}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Go to Post</a>
+            <a href="{{appURL}}/sdpost/{{postUrl}}?u={{userId}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Go to Post</a>
             {% endif %}
         </div>
         

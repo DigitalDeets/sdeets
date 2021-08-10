@@ -6,7 +6,7 @@ var email = require('./email');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'School Deets' });
+  res.render('index', { title: 'Digital Deets' });
 });
 
 router.post('/email', cors(), (req, res) => {

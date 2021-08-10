@@ -32,10 +32,10 @@
         
         var postRedirectURL = '';
         if (postUrl && postUrl.length){
-            postRedirectURL = 'https://app.schooldeets.com/sdpost/' + postUrl;
+            postRedirectURL = 'https://app.digitaldeets.com/sdpost/' + postUrl;
             
             if (userID && userID.length){
-                postRedirectURL += '?parent_id=' + userID;
+                postRedirectURL += '?u=' + userID;
             }
         }
         
