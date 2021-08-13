@@ -125,10 +125,10 @@ module.exports = {
         var sender_email = process.env.SENDER_EMAIL;
         
         //if set option sender_name and sender_email, don't use default
-        if (typeof options.SenderName !== 'undefined' && typeof options.SenderEmail !== 'undefined'){
-            if (options.SenderName && options.SenderEmail){
-                sender_name  = options.SenderName;
-                sender_email = options.SenderEmail;
+        if (typeof options.OrganizationSenderName !== 'undefined' && typeof options.OrganizationSenderEmail !== 'undefined'){
+            if (options.OrganizationSenderName && options.OrganizationSenderEmail){
+                sender_name  = options.OrganizationSenderName;
+                sender_email = options.OrganizationSenderEmail;
             }
         }
         
