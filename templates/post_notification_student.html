@@ -1,4 +1,8 @@
 <body style="background:#ffffff;max-width:1000px;margin: 10px auto;">
+    <div style="display:block;font-weight:bold;margin-bottom: 15px;">
+        <img src="{{schoolIcon}}" width="50" style="vertical-align:middle;margin-right: 10px;border-radius: 3px;" alt="">
+        <span style="vertical-align:middle;font-size: 16px;">{{schoolName}}</span>
+    </div>
     <div style="background:#f6f6f6;padding:2px 2% 15px;font-size:16px;line-height: 20px;font-family:'Arial', 'Helvetica-light', sans-serif;">
         <div style="text-align: center;margin:20px 0; font-weight: bold; line-height: 24px;">
             Hello{% if receiverName %} {{receiverName}}{% endif %}, <span style="color:#ee6c34">{{senderName}}</span> {{postType}} the following message to <span style="color:#ee6c34">{{group}}</span>
@@ -14,7 +18,7 @@
                             {% for postGroup in groups %}
                             <span style="display: block;"><img src="{{postGroup.avatar}}" width="14" style="vertical-align: middle;" alt="" />&nbsp;<span style="vertical-align: middle;">{{postGroup.name}}</span></span>
                             {% endfor %} 
-                            <span style="display: block; font-weight: bold;"><img src="{{schoolIcon}}" width="14" style="vertical-align: middle;" alt=""/>&nbsp;<span style="vertical-align: middle;">{{schoolName}}</span></span><span style="display: block;"><img src="{{authorAvatar}}" width="14" style="vertical-align: middle;" alt="" />&nbsp;<span style="vertical-align: middle;">{{posterName}}</span></span><span style="display: block;"><img src="https://app.digitaldeets.com/wp-content/themes/sdthm/img/clock.png" width="14" style="vertical-align: middle;" alt="" />&nbsp;<span style="vertical-align: middle;">{{postDate}}</span></span>
+                            <span style="display: block;"><img src="{{authorAvatar}}" width="14" style="vertical-align: middle;" alt="" />&nbsp;<span style="vertical-align: middle;">{{posterName}}</span></span><span style="display: block;"><img src="https://app.digitaldeets.com/wp-content/themes/sdthm/img/clock.png" width="14" style="vertical-align: middle;" alt="" />&nbsp;<span style="vertical-align: middle;">{{postDate}}</span></span>
                             </td>
                         </tr>
                     </table>
