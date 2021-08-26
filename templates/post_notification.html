@@ -67,11 +67,10 @@
         
         {% if adsPosts.ids %}
         <div style="margin: 30px 0 5px;text-align:center;font-size: 18px;line-height: 22px;font-style:italic; color: #0c769d; font-weight: bold;">Check out the latest community promotions</div>
-            <div style="background-color:#ffffff;padding:10px;margin:10px 0 20px;">
-                {% for post in adsPosts.posts %}
-                <div style="margin-bottom:5px;"><a href="{{appURL}}/dashboard/promotion/?id={{post.id}}&u={{userId}}&t=e" target="_blank" style="text-decoration:none;font-size:16px;line-height:22px;color:#222222;"><b style="color:#ee6c34">{{post.sponsor}}</b> - {{post.title}}</a></div>
-                {% endfor %}
-            </div>
+        <div style="background-color:#ffffff;padding:10px;margin:10px 0 20px;">
+            {% for post in adsPosts.posts %}
+            <div style="margin-bottom:5px;"><a href="{{appURL}}/dashboard/promotion/?id={{post.id}}&u={{userId}}&t=e" target="_blank" style="text-decoration:none;font-size:16px;line-height:22px;color:#222222;"><b style="color:#ee6c34">{{post.sponsor}}</b> - {{post.title}}</a></div>
+            {% endfor %}
         </div>
         {% endif %}
         
