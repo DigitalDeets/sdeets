@@ -66,39 +66,41 @@
         </div>
         
         {% if adsPosts.ids %}
-        <div style="margin: 30px 0 5px;text-align:center;font-size: 16px;line-height: 22px;font-style:italic;">Check out the latest community promotions</div>
-        <table style="width:100%;margin:5px 0;border-spacing:5px;">
-            <tr>
-                {% for post in adsPosts.posts%}
-                <td style="width:{{adsPosts.width}}%;background-color:#ffffff;border:1px solid #e6e6e6;">
-                    <div style="height: 100%;padding: 10px 5px 5px;text-align:center;">
-                        {% if post.image %}
-                        <div style="height:150px;line-height:150px;"><img style="display:inline-block;max-width:100%;max-height:150px;vertical-align:middle;" src="{{post.image}}" /></div> 
-                        {% endif %}  
-                        <div style="padding:10px;font-size:16px;line-height:20px;color:#333333;">{{post.title}}</div>                        
-                        <div style="margin-top:5px;font-size:16px;line-height:20px;">
-                            <a href="{{appURL}}/dashboard/promotion/?id={{post.id}}&u={{userId}}&t=e" target="_blank" style="display:inline-block;color:#0c769d;text-decoration:none;">Learn More</a>
-                        </div>
-                    </div>
-                </td>
-                {% endfor %} 
-            </tr>
-        </table>
+        <div style="margin: 30px 0 5px;text-align:center;font-size: 18px;line-height: 22px;font-style:italic; color: #0c769d; font-weight: bold;">Check out the latest community promotions</div>
+            <div style="background-color:#ffffff;padding:10px;margin:10px 0 20px;">
+                {% for post in adsPosts.posts %}
+                <div style="margin-bottom:5px;"><a href="{{appURL}}/dashboard/promotion/?id={{post.id}}&u={{userId}}&t=e" target="_blank" style="text-decoration:none;font-size:16px;line-height:22px;color:#222222;"><b style="color:#ee6c34">{{post.sponsor}}</b> - {{post.title}}</a></div>
+                {% endfor %}
+            </div>
+        </div>
         {% endif %}
         
-        <div style="margin: 15px 0 5px;text-align:center;">
-            <div style="font-size: 16px;line-height: 22px;font-style:italic;">Explore our Community Listings</div>
+        {% if sponsors %}
+        <div style="margin: 25px 0 5px;text-align:center;">
+            <div style="font-size:16px;line-height:22px;font-style:italic;">Thank you to our Sponsors</div>
+            <div>
+                {% for sponsor in sponsors %}
+                <a href="{{appURL}}/dashboard/sponsor/?id={{sponsor.id}}" target="_blank" style="display:inline-block;margin:5px 10px 0;text-decoration:none;">
+                    <img src="{{sponsor.logo}}" style="border-radius:5px;" width="120" alt=""/>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <div style="margin: 25px 0 5px;text-align:center;">
+            <div style="font-size: 16px;line-height:22px;font-style:italic;">Explore our Community Listings</div>
             <div>
                 <a href="https://dittofi.com/409#/directory?CategoryDefault=AfterSchool-TheArts" target="_blank" style="display:inline-block;margin: 5px 10px 0;text-decoration:none;">
-                    <img src="{{appURL}}/wp-content/uploads/2021/07/after_achool_arts-150x150.png" width="120"/>
+                    <img src="{{appURL}}/wp-content/uploads/2021/07/after_achool_arts-150x150.png" style="border-radius:5px;" width="120" alt=""/>
                 </a>
                 
                 <a href="https://dittofi.com/409#/directory?CategoryDefault=AfterSchool-Athletics" target="_blank" style="display:inline-block;margin: 5px 10px 0;text-decoration:none;">
-                    <img src="{{appURL}}/wp-content/uploads/2021/06/after_achool_athletics-150x150.jpg" width="120"/>
+                    <img src="{{appURL}}/wp-content/uploads/2021/06/after_achool_athletics-150x150.jpg" style="border-radius:5px;" width="120" alt=""/>
                 </a>
                 
                 <a href="https://dittofi.com/409#/directory?CategoryDefault=Virtual%20Camp" target="_blank" style="display:inline-block;margin: 5px 10px 0;text-decoration:none;">
-                    <img src="{{appURL}}/wp-content/uploads/2021/04/Virtual-Camps-150x150.jpg" width="120"/>
+                    <img src="{{appURL}}/wp-content/uploads/2021/04/Virtual-Camps-150x150.jpg" style="border-radius:5px;" width="120" alt=""/>
                 </a>
             </div>
         </div>

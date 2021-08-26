@@ -40,6 +40,7 @@ module.exports = {
                 prospectiveParent: options.prospectiveParent,
                 unregisteredParent: options.unregisteredParent,
                 adsPosts: options.adsPosts,
+                sponsors: options.sponsors,
                 dataImportPreference: options.dataImportPreference,
                 appURL: options.appURL
             });
