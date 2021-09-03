@@ -1,7 +1,7 @@
-<body style="background:#ffffff;max-width:1000px;margin: 10px auto;">
+<body style="background:#ffffff;max-width:1000px;margin:10px auto;">
     <div style="display:block;font-weight:bold;margin-bottom: 15px;">
         <img src="{{schoolIcon}}" width="50" style="vertical-align:middle;margin-right: 10px;border-radius: 3px;" alt="">
-        <span style="vertical-align:middle;font-size: 16px;">{{schoolName}}</span>
+        <span style="vertical-align:middle;font-size:16px;">{{schoolName}}</span>
     </div>
     <div style="background:#f6f6f6;padding:2px 2% 15px;font-size:16px;line-height: 20px;font-family:'Arial', 'Helvetica-light', sans-serif;">
         <div style="text-align: center;margin:20px 0; font-weight: bold; line-height: 24px;">
@@ -14,50 +14,50 @@
             {% endif %}
         </div>  
         
-        <div style="background:#ffffff; color: #333333;">
-            <div style="text-align: left; padding-bottom: 25px; position:relative; font-size: 14px; max-width: 880px; margin: 0 auto;">
-                <div style="padding: 25px 25px 0px 5%;">
+        <div style="background:#ffffff;color:#333333;border-radius:5px;">
+            <div style="text-align:left;padding-bottom:25px;position:relative;font-size:14px;max-width:880px;margin:0 auto;">
+                <div style="padding:25px 25px 0 5%;">
                     <table>
                         <tr>
-                            <td style="width: 60px; vertical-align: top;"><img src="{{groups[0].avatar}}" alt="" style="display: inline-block; width:40px; height:40px; margin-top: 4px; border-radius:50%; box-shadow:0 2px 5px 0 rgba(0,0,0,.26);"></td>
+                            <td style="width:60px;vertical-align:top;"><img src="{{groups[0].avatar}}" alt="" style="display:inline-block;width:40px;height:40px;margin-top:4px;border-radius:3px;box-shadow:0 2px 5px 0 rgba(0,0,0,.26);"></td>
                             <td>
                             {% for postGroup in groups %}
-                            <span style="display: block;"><img src="{{postGroup.avatar}}" width="14" style="vertical-align: middle;" alt="" />&nbsp;<span style="vertical-align: middle;">{{postGroup.name}}</span></span>
+                            <span style="display:block;"><img src="{{postGroup.avatar}}" width="14" style="vertical-align:middle;" alt="" />&nbsp;<span style="vertical-align: middle;">{{postGroup.name}}</span></span>
                             {% endfor %} 
-                            <span style="display: block;"><img src="{{authorAvatar}}" width="14" style="vertical-align: middle;" alt="" />&nbsp;<span style="vertical-align: middle;">{{posterName}}</span></span><span style="display: block;"><img src="{{appURL}}/wp-content/themes/sdthm/img/clock.png" width="14" style="vertical-align: middle;" alt="" />&nbsp;<span style="vertical-align: middle;">{{postDate}}</span></span>
+                            <span style="display:block;"><img src="{{authorAvatar}}" width="14" style="vertical-align:middle;" alt="" />&nbsp;<span style="vertical-align: middle;">{{posterName}}</span></span><span style="display: block;"><img src="{{appURL}}/wp-content/themes/sdthm/img/clock.png" width="14" style="vertical-align: middle;" alt="" />&nbsp;<span style="vertical-align:middle;">{{postDate}}</span></span>
                             </td>
                         </tr>
                     </table>
                 </div>
-                <div style="padding: 0 5%;">
-                    <div style="margin: 15px 0; font-size: 16px;font-weight:bold;">{{subject}}</div>
+                <div style="padding:0 5%;">
+                    <div style="margin:15px 0;font-size:16px;font-weight:bold;">{{subject}}</div>
                     {% if postImage %}
-                    <div style="margin-bottom: 10px;text-align:center;"><img src="{{postImage}}" style="max-width: 100%;" alt=""/></div>
+                    <div style="margin-bottom:10px;text-align:center;"><img src="{{postImage}}" style="max-width: 100%;" alt=""/></div>
                     {% endif %}
                     {% if postVideoLink %}
-                    <div style="margin: 15px 0;"><a href="{{postVideoLink}}" target="_blank" style="display: inline-block;color:#0c769d;"><img src="{{postVideoIcon}}" style="display: inline-block; height: 35px; margin-right:10px;vertical-align: middle;" alt=""><span>Watch the video</span></a></div>
+                    <div style="margin:15px 0;"><a href="{{postVideoLink}}" target="_blank" style="display: inline-block;color:#0c769d;"><img src="{{postVideoIcon}}" style="display: inline-block; height: 35px; margin-right:10px;vertical-align: middle;" alt=""><span>Watch the video</span></a></div>
                     {% endif %}
-                    <div style="position: relative; font-size: 14px; line-height: 20px;">{{content|safe}}</div>
+                    <div style="position:relative;font-size:14px;line-height:20px;">{{content|safe}}</div>
                     {% if postAttachmentLink %}
-                    <div style="margin-top: 15px;"><b>Attachment:</b><a href="{{postAttachmentLink}}" target="_blank" style="display: inline-block; margin-left:10px;"><img src="{{postAttachmentIcon}}" style="vertical-align: middle;" alt=""></a></div>
+                    <div style="margin-top:15px;"><b>Attachment:</b><a href="{{postAttachmentLink}}" target="_blank" style="display: inline-block; margin-left:10px;"><img src="{{postAttachmentIcon}}" style="vertical-align: middle;" alt=""></a></div>
                     {% endif %}
                 </div>                
             </div>
         </div>
         
         {% if incompleteRegistration %}
-        <div style="margin:20px;">
+        <div style="margin:20px 10px;font-size:14px;line-height:20px;font-style:italic;">
             <p>This organization is sending emails using Digital Deets to communicate with you. You can set up an account for full access to the system. Once you create your account, you can access communication from our mobile and web applications, manage your account preferences, view every image sent with every post, and access more information from your organization.</p>
         </div>
         {% elseif prospectiveParent %}
-        <div style="margin:20px;">
+        <div style="margin:20px 10px;font-size:14px;line-height:20px;font-style:italic;">
             <p>This organization is sending emails using Digital Deets to communicate with you. You can set up an account for full access to the system. Once you create your account, you can access communication from our mobile and web applications, manage your account preferences, view every image sent with every post, and access more information from your organization.</p>
         </div>
         {% endif %}
         
-        <div style="text-align: center; margin-top:30px;">
+        <div style="text-align:center;margin-top:30px;">
             {% if incompleteRegistration %}
-            <a href="{{appURL}}/parent-registration?parent_id={{userId}}&post_id={{postUrl}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Set up my account</a>
+            <a href="{{appURL}}/member-registration?u={{userId}}&post_id={{postUrl}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Set up my account</a>
             {% elseif unregisteredParent %}
             <a href="{{appURL}}/sdpost/{{postUrl}}?u={{userId}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Go to Post</a>
             {% else %}
@@ -66,8 +66,8 @@
         </div>
         
         {% if adsPosts.ids %}
-        <div style="margin: 30px 0 5px;text-align:center;font-size: 18px;line-height: 22px;font-style:italic; color: #0c769d; font-weight: bold;">Check out the latest community promotions</div>
-        <div style="background-color:#ffffff;padding:10px;margin:10px 0 20px;">
+        <div style="margin:30px 0 5px;text-align:center;font-size: 18px;line-height: 22px;font-style:italic; color: #0c769d; font-weight: bold;">Check out the latest community promotions</div>
+        <div style="background-color:#ffffff;padding:10px 10px 5px 10px;margin:10px 0 20px;border-radius:5px;">
             {% for post in adsPosts.posts %}
             <div style="margin-bottom:5px;"><a href="{{appURL}}/dashboard/promotion/?id={{post.id}}&u={{userId}}&t=e" target="_blank" style="text-decoration:none;font-size:16px;line-height:22px;color:#222222;"><b style="color:#ee6c34">{{post.sponsor}}</b> - {{post.title}}</a></div>
             {% endfor %}
@@ -75,7 +75,7 @@
         {% endif %}
         
         {% if sponsors %}
-        <div style="margin: 25px 0 5px;text-align:center;">
+        <div style="margin:25px 0 5px;text-align:center;">
             <div style="font-size:16px;line-height:22px;font-style:italic;">Thank you to our Sponsors</div>
             <div>
                 {% for sponsor in sponsors %}
