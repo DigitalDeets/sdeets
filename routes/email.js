@@ -132,7 +132,7 @@ module.exports = {
             }
         }
         
-        var sender_address  = sender_name + ' <' + sender_email + '>';
+        var sender_address  = '"' + sender_name + '" <' + sender_email + '>';
         
         var mailOptions = {
             transport:  transporter,
