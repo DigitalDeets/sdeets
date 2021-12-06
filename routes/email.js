@@ -42,8 +42,7 @@ module.exports = {
                 adsPosts: options.adsPosts,
                 sponsors: options.sponsors,
                 appURL: options.appURL
-            });
-            
+            });            
         }else if(options.template == 'post_notification_student'){
             var html = template({
                 receiverName: options.receiverName,
@@ -88,6 +87,16 @@ module.exports = {
                 postId: options.postId,
                 userId: options.userId,
                 userType: options.userType
+            });
+        }else if(options.template == 'digest'){
+            var html = template({
+                content: options.content,               
+                postId: options.postId,
+                userId: options.userId,
+                userEmail: options.receiver, 
+                schoolName: options.schoolName,
+                incompleteRegistration: options.incompleteRegistration,
+                appURL: options.appURL
             });
 
         }else if(options.template == 'account_parent_invitation'){
