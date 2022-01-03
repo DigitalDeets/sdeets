@@ -41,6 +41,7 @@ module.exports = {
                 unregisteredParent: options.unregisteredParent,
                 adsPosts: options.adsPosts,
                 sponsors: options.sponsors,
+                dd_categories: options.dd_categories,
                 appURL: options.appURL
             });            
         }else if(options.template == 'post_notification_student'){

@@ -89,22 +89,18 @@
         </div>
         {% endif %}
 
+        {% if dd_categories %}
         <div style="margin: 25px 0 5px;text-align:center;">
-            <div style="font-size: 16px;line-height:22px;font-style:italic;">Explore our Community Listings</div>
+            <div style="margin-bottom:5px;font-size: 18px;line-height:22px;font-style:italic;color:#44999e;font-weight:bold;"><a href="https://catalog.digitaldeets.com/" target="_blank">Explore Catalog Listings</a></div>
             <div>
-                <a href="https://dittofi.com/409#/directory?CategoryDefault=AfterSchool-TheArts" target="_blank" style="display:inline-block;margin: 5px 10px 0;text-decoration:none;">
-                    <img src="{{appURL}}/wp-content/uploads/2021/07/after_achool_arts-150x150.png" style="border-radius:5px;" width="120" alt=""/>
+                {% for dd_categories in dd_category %}
+                <a href="{{dd_category.link}}" target="_blank" style="display:inline-block;margin: 5px 10px 0;text-decoration:none;">
+                    <img src="{{appURL}}{{dd_category.img}}" style="border-radius:5px;" width="120" alt=""/>
                 </a>
-                
-                <a href="https://dittofi.com/409#/directory?CategoryDefault=AfterSchool-Athletics" target="_blank" style="display:inline-block;margin: 5px 10px 0;text-decoration:none;">
-                    <img src="{{appURL}}/wp-content/uploads/2021/06/after_achool_athletics-150x150.jpg" style="border-radius:5px;" width="120" alt=""/>
-                </a>
-                
-                <a href="https://dittofi.com/409#/directory?CategoryDefault=Virtual%20Camp" target="_blank" style="display:inline-block;margin: 5px 10px 0;text-decoration:none;">
-                    <img src="{{appURL}}/wp-content/uploads/2021/04/Virtual-Camps-150x150.jpg" style="border-radius:5px;" width="120" alt=""/>
-                </a>
+                {% endfor %}
             </div>
         </div>
+        {% endif %}
         
         <div style="border-top: 1px solid #cac5c5; text-align: center; margin-top:30px;">
             <div style="margin-top:5px">
