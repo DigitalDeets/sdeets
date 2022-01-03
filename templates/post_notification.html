@@ -91,9 +91,11 @@
 
         {% if dd_categories %}
         <div style="margin: 25px 0 5px;text-align:center;">
-            <div style="margin-bottom:5px;font-size: 18px;line-height:22px;font-style:italic;color:#44999e;font-weight:bold;"><a href="https://catalog.digitaldeets.com/" target="_blank">Explore Catalog Listings</a></div>
+            <div style="margin-bottom:5px;">
+                <a href="https://catalog.digitaldeets.com/" target="_blank" style="font-size: 18px;line-height:22px;font-style:italic;color:#44999e;font-weight:bold;text-decoration:none;">Explore Catalog Listings</a>
+            </div>
             <div>
-                {% for dd_categories in dd_category %}
+                {% for dd_category in dd_categories %}
                 <a href="{{dd_category.link}}" target="_blank" style="display:inline-block;margin: 5px 10px 0;text-decoration:none;">
                     <img src="{{appURL}}{{dd_category.img}}" style="border-radius:5px;" width="120" alt=""/>
                 </a>
