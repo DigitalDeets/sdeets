@@ -97,7 +97,6 @@ module.exports = {
                 userEmail: options.receiver, 
                 schoolName: options.schoolName,
                 schoolIcon: options.schoolIcon,
-                incompleteRegistration: options.incompleteRegistration,
                 appURL: options.appURL
             });
 
