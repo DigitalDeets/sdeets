@@ -90,13 +90,15 @@ module.exports = {
                 userType: options.userType
             });
         }else if(options.template == 'digest'){
-            var html = template({
-                content: options.content,               
+            var html = template({                             
                 postId: options.postId,
                 userId: options.userId,
                 userEmail: options.receiver, 
                 schoolName: options.schoolName,
                 schoolIcon: options.schoolIcon,
+                content: options.content,  
+                content2: options.content2,
+                autologinUrl: options.autologinUrl,
                 appURL: options.appURL
             });
 
