@@ -97,8 +97,9 @@ module.exports = {
                 schoolName: options.schoolName,
                 schoolIcon: options.schoolIcon,
                 content: options.content,  
-                content2: options.content2,
-                autologinUrl: options.autologinUrl,
+                CTAText: options.cta_text,
+                CTAUrl: options.cta_url,
+                CTAButton: options.cta_button,
                 appURL: options.appURL
             });
 

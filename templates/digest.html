@@ -8,13 +8,13 @@
             <div style="text-align:left;padding:0 5px 15px;position:relative;font-size:14px;max-width:880px;margin:0 auto;">
                 {{content|safe}}
                 
-                {% if content2 %}
-                <div style="max-width:700px;margin: 10px auto;text-align:center;font-size:16px;line-height:22px;">{{content2|safe}}</div>
+                {% if CTAText %}
+                <div style="max-width:700px;margin: 10px auto;text-align:center;font-size:16px;line-height:22px;">{{CTAText|safe}}</div>
                 {% endif %}
                 
-                {% if autologinUrl %}
+                {% if CTAButton %}
                 <div style="text-align:center;margin:20px 0 10px;">                    
-                    <a href="{{appURL}}{{autologinUrl}}" style="display:inline-block;text-decoration:none;padding: 12px 15px;font-size:16px;text-align:center;background:#f06e34;color:#ffffff;border-radius:4px;" target="_blank">Sign up my organization</a>
+                    <a href="{{appURL}}{{CTAUrl}}" style="display:inline-block;text-decoration:none;padding: 12px 15px;font-size:16px;text-align:center;background:#f06e34;color:#ffffff;border-radius:4px;" target="_blank">{{CTAButton}}</a>
                 </div>
                 {% endif %}
             </div>
