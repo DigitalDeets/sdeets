@@ -100,6 +100,8 @@ module.exports = {
                 CTAText: options.cta_text,
                 CTAUrl: options.cta_url,
                 CTAButton: options.cta_button,
+                showShareButtons: options.showShareButtons,
+                shareButtons: options.shareButtons,
                 appURL: options.appURL
             });
 
