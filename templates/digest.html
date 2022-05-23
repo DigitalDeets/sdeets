@@ -8,6 +8,21 @@
             <div style="text-align:left;padding:0 5px 15px;position:relative;font-size:14px;max-width:880px;margin:0 auto;">
                 {{content|safe}}
                 
+                {% if showShareButtons %}
+                <div style="text-align: center;">
+                    <a href="{{shareButtons.facebook}}" style="background: url('https://app.digitaldeets.com/wp-content/themes/sdthm/img/share/facebook.png') 4px center no-repeat #1977f3;display:inline-block;width:70px;height:36px;margin:8px 5px;padding:0 10px 0 38px; font-size: 14px;line-height: 37px;
+           font-weight: bold;color:#ffffff;text-align: center;border-radius: 4px;text-decoration: none;" target="_blank">Facebook</a>
+                    <a href="{{shareButtons.twitter}}" style="background: url('https://app.digitaldeets.com/wp-content/themes/sdthm/img/share/twitter.png') 4px center no-repeat #1da1f2;display:inline-block;width:70px;height:36px;margin:8px 5px;padding:0 10px 0 38px; font-size: 14px;line-height: 37px;
+           font-weight: bold;color:#ffffff;text-align: center;border-radius: 4px;text-decoration: none;" target="_blank">Twitter</a>
+                    <a href="{{shareButtons.whatsapp}}" style="background: url('https://app.digitaldeets.com/wp-content/themes/sdthm/img/share/whatsapp.png') 4px center no-repeat #4dc247;display:inline-block;width:70px;height:36px;margin:8px 5px;padding:0 10px 0 38px; font-size: 14px;line-height: 37px;
+           font-weight: bold;color:#ffffff;text-align: center;border-radius: 4px;text-decoration: none;" target="_blank">WhatsApp</a>
+                    <a href="{{shareButtons.forward}}" style="background: url('https://app.digitaldeets.com/wp-content/themes/sdthm/img/share/forward.png') 4px center no-repeat #848484;display:inline-block;width:70px;height:36px;margin:8px 5px;padding:0 10px 0 38px; font-size: 14px;line-height: 37px;
+           font-weight: bold;color:#ffffff;text-align: center;border-radius: 4px;text-decoration: none;" target="_blank">Forward</a>
+                    <a href="{{shareButtons.link}}" style="background: url('https://app.digitaldeets.com/wp-content/themes/sdthm/img/share/link.png') 4px center no-repeat #ff9900;display:inline-block;width:70px;height:36px;margin:8px 5px;padding:0 10px 0 38px; font-size: 14px;line-height: 37px;
+           font-weight: bold;color:#ffffff;text-align: center;border-radius: 4px;text-decoration: none;" target="_blank">Link</a>
+                </div>
+                {% endif %}
+                
                 {% if CTAText %}
                 <div style="max-width:700px;margin: 10px auto;text-align:center;font-size:16px;line-height:22px;">{{CTAText|safe}}</div>
                 {% endif %}
@@ -18,20 +33,6 @@
                 </div>
                 {% endif %}
             </div>
-            {% if showShareButtons %}
-            <div style="text-align: center;">
-                <a href="{{shareButtons.facebook}}" style="background: url('https://app.digitaldeets.com/wp-content/themes/sdthm/img/share/facebook.png') 4px center no-repeat #1977f3;display:inline-block;width:70px;height:36px;margin:8px 5px;padding:0 10px 0 38px; font-size: 14px;line-height: 37px;
-       font-weight: bold;color:#ffffff;text-align: center;border-radius: 4px;text-decoration: none;" target="_blank">Facebook</a>
-                <a href="{{shareButtons.twitter}}" style="background: url('https://app.digitaldeets.com/wp-content/themes/sdthm/img/share/twitter.png') 4px center no-repeat #1da1f2;display:inline-block;width:70px;height:36px;margin:8px 5px;padding:0 10px 0 38px; font-size: 14px;line-height: 37px;
-       font-weight: bold;color:#ffffff;text-align: center;border-radius: 4px;text-decoration: none;" target="_blank">Twitter</a>
-                <a href="{{shareButtons.whatsapp}}" style="background: url('https://app.digitaldeets.com/wp-content/themes/sdthm/img/share/whatsapp.png') 4px center no-repeat #4dc247;display:inline-block;width:70px;height:36px;margin:8px 5px;padding:0 10px 0 38px; font-size: 14px;line-height: 37px;
-       font-weight: bold;color:#ffffff;text-align: center;border-radius: 4px;text-decoration: none;" target="_blank">WhatsApp</a>
-                <a href="{{shareButtons.forward}}" style="background: url('https://app.digitaldeets.com/wp-content/themes/sdthm/img/share/forward.png') 4px center no-repeat #848484;display:inline-block;width:70px;height:36px;margin:8px 5px;padding:0 10px 0 38px; font-size: 14px;line-height: 37px;
-       font-weight: bold;color:#ffffff;text-align: center;border-radius: 4px;text-decoration: none;" target="_blank">Forward</a>
-                <a href="{{shareButtons.link}}" style="background: url('https://app.digitaldeets.com/wp-content/themes/sdthm/img/share/link.png') 4px center no-repeat #ff9900;display:inline-block;width:70px;height:36px;margin:8px 5px;padding:0 10px 0 38px; font-size: 14px;line-height: 37px;
-       font-weight: bold;color:#ffffff;text-align: center;border-radius: 4px;text-decoration: none;" target="_blank">Link</a>
-            </div>
-            {% endif %}
         </div>
 
         <div style="border-top: 1px solid #cac5c5; text-align: center; margin-top:30px;">
