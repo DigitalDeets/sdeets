@@ -102,6 +102,7 @@ module.exports = {
                 CTAButton: options.cta_button,
                 showShareButtons: options.showShareButtons,
                 shareButtons: options.shareButtons,
+                dealClosedWon: options.dealClosedWon,
                 appURL: options.appURL
             });
 
