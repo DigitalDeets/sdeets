@@ -103,6 +103,7 @@ module.exports = {
                 showShareButtons: options.showShareButtons,
                 shareButtons: options.shareButtons,
                 dealClosedWon: options.dealClosedWon,
+                promotionIDs: options.promotionIDs,
                 appURL: options.appURL
             });
 

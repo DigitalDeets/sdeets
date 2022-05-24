@@ -56,9 +56,15 @@
         {% else %}
         <div style="text-align: center; color: #b3b3b1; font-size:12px">Sent by Digital Deets - 4041 South Narcissus Way</div>
         <div style="margin-top:10px;font-size:12px;color:#b3b3b1;text-align:center;">
-            Your favorite fundraising organization raises money each time you open and read the local Deets Digest. It’s filled with valuable information from community organizations and businesses right outside your door. If you would like them to stop forwarding it, let the sender know.
+            Your favorite fundraising organization raises money each time you open and read the local Deets Digest.<br>
+            It’s filled with valuable information from community organizations and businesses right outside your door.<br>
+            If you would like them to stop forwarding it, let the sender know.
         </div>
         {% endif %}
     </div>
+    {% if promotionIDs %}
+    <img src="{{appURL}}/email_pixel/post_read.php?parent_id={{userId}}&post_id={{postId}}&ads_post_id={{promotionIDs}}&image=tracking.png" alt="" width="1" height="1" />
+    {% else %}
     <img src="{{appURL}}/email_pixel/post_read.php?parent_id={{userId}}&post_id={{postId}}&image=tracking.png" alt="" width="1" height="1" />
+    {% endif %}
 </body>
