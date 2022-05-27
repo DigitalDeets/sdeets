@@ -96,6 +96,7 @@ module.exports = {
                 userEmail: options.receiver, 
                 schoolName: options.schoolName,
                 schoolIcon: options.schoolIcon,
+                description: options.description,
                 content: options.content,  
                 CTAText: options.cta_text,
                 CTAUrl: options.cta_url,
