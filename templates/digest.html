@@ -1,7 +1,7 @@
 <body style="background:#ffffff;max-width:1000px;margin:10px auto;">
     <div style="display:block;font-weight:bold;margin-bottom: 15px;">
         <img src="{{organizationIcon}}" width="50" style="vertical-align:middle;margin-right: 10px;border-radius: 3px;" alt="">
-        <span style="vertical-align:middle;font-size:16px;">{{organizationName}}{{description}}</span>
+        <span style="vertical-align:middle;font-size:16px;">{{description}}</span>
     </div>
     <div style="background:#f6f6f6;padding:20px 2% 15px;font-size:16px;line-height: 20px;font-family:'Arial', 'Helvetica-light', sans-serif;">
         <div style="background:#ffffff;color:#333333;border-radius:5px;">
@@ -62,12 +62,14 @@
         {% endif %}
 
         <div style="margin-top:5px;font-size:12px;color:#b3b3b1;text-align:center;">
-            {% if templateVersion == '2' %}
-            If you prefer to not receive the Deets Digest from {{organizationName}}, you can unsubscribe <a href="{{appURL}}/unsubscribe-digest?email={{userEmail}}&id={{userId}}&digest_id={{postId}}" style="color: #b3b3b1;text-decoration:underline;" target="_blank">here</a>.<br>You will only be unsubscribed from the Deets Digest and not from other communications.
-            {% elseif templateVersion == '1' %}
+            {% if templateVersion == '1 %}
             Your favorite fundraising organization raises money each time you open and read the local Deets Digest.<br>
             It’s filled with valuable information from community organizations and businesses right outside your door.<br>
             If you would like them to stop forwarding it, let the sender know.
+            {% elseif templateVersion == '2' %}
+            If you prefer to not receive the Deets Digest from {{organizationName}}, you can unsubscribe <a href="{{appURL}}/unsubscribe-digest?email={{userEmail}}&id={{userId}}&digest_id={{postId}}" style="color: #b3b3b1;text-decoration:underline;" target="_blank">here</a>.<br>You will only be unsubscribed from the Deets Digest and not from other communications.
+            {% elseif templateVersion == '3' %}
+            If you prefer to not receive the Deets Digest, you can unsubscribe <a href="{{appURL}}/unsubscribe-digest?email={{userEmail}}&id={{userId}}&digest_id={{postId}}" style="color: #b3b3b1;text-decoration:underline;" target="_blank">here</a>.<br>You will only be unsubscribed from the Deets Digest and not from other communications.
             {% endif %}
         </div>
     </div>
