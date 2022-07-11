@@ -45,10 +45,10 @@
         </div>
 
         <div style="margin-bottom:5px;text-align:center;color:#b3b3b1;font-size:12px">
-            {% if templateVersion == '2' %}
+            {% if templateVersion == '1' || templateVersion == '3' %}
+            Sent by Digital Deets, 4041 S. Narcissus Way, Denver, CO, 80237
+            {% elseif templateVersion == '2' %}
             Sent by {{organizationName}} using the Digital Deets system, 4041 S. Narcissus Way, Denver, CO, 80237
-            {% elseif templateVersion == '1' %}
-            Sent by Digital Deets - 4041 S. Narcissus Way, Denver, CO, 80237
             {% endif %}
         </div>
         
@@ -69,7 +69,7 @@
             {% elseif templateVersion == '2' %}
             If you prefer to not receive the Deets Digest from {{organizationName}}, you can unsubscribe <a href="{{appURL}}/unsubscribe-digest?email={{userEmail}}&id={{userId}}&digest_id={{postId}}" style="color: #b3b3b1;text-decoration:underline;" target="_blank">here</a>.<br>You will only be unsubscribed from the Deets Digest and not from other communications.
             {% elseif templateVersion == '3' %}
-            If you prefer to not receive the Deets Digest, you can unsubscribe <a href="{{appURL}}/unsubscribe-digest?email={{userEmail}}&id={{userId}}&digest_id={{postId}}" style="color: #b3b3b1;text-decoration:underline;" target="_blank">here</a>.<br>You will only be unsubscribed from the Deets Digest and not from other communications.
+            If you prefer to not receive the Deets Digest Business Summary, you can unsubscribe <a href="{{appURL}}/unsubscribe-digest?email={{userEmail}}&id={{userId}}&digest_id={{postId}}" style="color: #b3b3b1;text-decoration:underline;" target="_blank">here</a>.
             {% endif %}
         </div>
     </div>
