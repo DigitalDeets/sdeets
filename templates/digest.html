@@ -45,10 +45,12 @@
         </div>
 
         <div style="margin-bottom:5px;text-align:center;color:#b3b3b1;font-size:12px">
-            {% if templateVersion == '1' || templateVersion == '3' %}
+            {% if templateVersion == '1' %}
             Sent by Digital Deets, 4041 S. Narcissus Way, Denver, CO, 80237
             {% elseif templateVersion == '2' %}
             Sent by {{organizationName}} using the Digital Deets system, 4041 S. Narcissus Way, Denver, CO, 80237
+            {% elseif templateVersion == '3' %}
+            Sent by Digital Deets, 4041 S. Narcissus Way, Denver, CO, 80237
             {% endif %}
         </div>
         
