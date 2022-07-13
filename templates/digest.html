@@ -18,16 +18,6 @@
                     </div>
                 </div>
                 {% endif %}
-
-                {% if CTAText %}
-                <div style="max-width:700px;margin: 10px auto;text-align:center;font-size:16px;line-height:22px;">{{CTAText|safe}}</div>
-                {% endif %}
-                
-                {% if CTAButton %}
-                <div style="text-align:center;margin:20px 0 10px;">                    
-                    <a href="{{CTAUrl}}" style="display:inline-block;text-decoration:none;padding: 12px 15px;font-size:16px;text-align:center;background:#f06e34;color:#ffffff;border-radius:4px;" target="_blank">{{CTAButton}}</a>
-                </div>
-                {% endif %}
             </div>
         </div>
 
@@ -46,7 +36,7 @@
 
         <div style="margin-bottom:5px;text-align:center;color:#b3b3b1;font-size:12px">
             {% if templateVersion == '1' %}
-            Sent by Digital Deets, 4041 S. Narcissus Way, Denver, CO, 80237
+            Sent by Digital Deets, 4041 S. Narcissus Way, Denver, CO, 80237            
             {% elseif templateVersion == '2' %}
             Sent by {{organizationName}} using the Digital Deets system, 4041 S. Narcissus Way, Denver, CO, 80237
             {% elseif templateVersion == '3' %}
@@ -64,7 +54,7 @@
         {% endif %}
 
         <div style="margin-top:5px;font-size:12px;color:#b3b3b1;text-align:center;">
-            {% if templateVersion == '1 %}
+            {% if templateVersion == '1' %}
             Your favorite fundraising organization raises money each time you open and read the local Deets Digest.<br>
             It’s filled with valuable information from community organizations and businesses right outside your door.<br>
             If you would like them to stop forwarding it, let the sender know.
