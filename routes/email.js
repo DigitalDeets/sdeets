@@ -42,7 +42,8 @@ module.exports = {
                 adsPosts: options.adsPosts,
                 sponsors: options.sponsors,
                 dd_categories: options.dd_categories,
-                appURL: options.appURL
+                appURL: options.appURL,
+                buttonURL: options.buttonURL
             });            
         }else if(options.template == 'post_notification_student'){
             var html = template({
