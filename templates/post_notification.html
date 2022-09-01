@@ -68,7 +68,7 @@
         </div>
         
         {% if adsPosts.ids %}
-        <div style="margin:30px 0 5px;text-align:center;font-size: 18px;line-height: 22px;font-style:italic; color:#44999e;font-weight: bold;">Check out the latest community promotions</div>
+        <div style="margin:30px 0 5px;text-align:center;font-size: 18px;line-height: 22px;font-style:italic; color:#44999e;font-weight: bold;">Check out the latest community promotions from our sponsors</div>
         <div style="background-color:#ffffff;padding:10px 10px 5px 10px;margin:10px 0 20px;border-radius:5px;">
             {% for post in adsPosts.posts %}
             <div style="margin-bottom:5px;"><a href="{{appURL}}/dashboard/promotion/?id={{post.id}}&u={{userId}}&t=e" target="_blank" style="text-decoration:none;font-size:16px;line-height:22px;color:#222222;"><b style="color:#ee6c34">{{post.sponsor}}</b> - {{post.title}}</a></div>
@@ -78,10 +78,10 @@
         
         {% if sponsors %}
         <div style="margin:25px 0 5px;text-align:center;">
-            <div style="font-size:16px;line-height:22px;font-style:italic;">Thank you to our Sponsors</div>
+            <div style="font-size:16px;line-height:22px;font-style:italic;">Become a sponsor</div>
             <div>
                 {% for sponsor in sponsors %}
-                <a href="{{appURL}}/dashboard/sponsor/?id={{sponsor.id}}" target="_blank" style="display:inline-block;margin:5px 10px 0;text-decoration:none;">
+                <a href="{{sponsor.link}}" target="_blank" style="display:inline-block;margin:5px 10px 0;text-decoration:none;">
                     <img src="{{sponsor.logo}}" style="border-radius:5px;" width="120" alt=""/>
                 </a>
                 {% endfor %}
