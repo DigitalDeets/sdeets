@@ -33,6 +33,7 @@ module.exports = {
                 postDate: options.postDate,
                 postImage: options.postImage,
                 postImages: options.postImages,
+                templateWidth: options.templateWidth,
                 showAllImages: options.showAllImages,
                 postVideoLink: options.postVideoLink,
                 postVideoIcon: options.postVideoIcon,
