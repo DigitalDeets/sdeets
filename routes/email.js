@@ -32,6 +32,8 @@ module.exports = {
                 posterName: options.posterName,                    
                 postDate: options.postDate,
                 postImage: options.postImage,
+                postImages: options.postImages,
+                showAllImages: options.showAllImages,
                 postVideoLink: options.postVideoLink,
                 postVideoIcon: options.postVideoIcon,
                 postAttachmentLink: options.postAttachmentLink,
