@@ -1,4 +1,4 @@
-<body style="background:#ffffff;max-width:1000px;margin:10px auto;">
+<body style="background:#ffffff;margin:10px auto;max-width:{% if !showAllImages %}1000{% else %}1200{% endif %}px;">
     <div style="display:block;font-weight:bold;margin-bottom: 15px;">
         <img src="{{schoolIcon}}" width="50" style="vertical-align:middle;margin-right: 10px;border-radius: 3px;" alt="">
         <span style="vertical-align:middle;font-size:16px;">{{schoolName}}</span>
@@ -17,7 +17,7 @@
         </div>  
         
         <div style="background:#ffffff;color:#333333;border-radius:5px;">
-            <div style="text-align:left;padding-bottom:25px;position:relative;font-size:14px;max-width:880px;margin:0 auto;">
+            <div style="text-align:left;padding-bottom:25px;position:relative;font-size:14px;margin:0 auto;{% if !showAllImages %}max-width:880px;{% endif %}">
                 <div style="padding:25px 25px 0 5%;">
                     <table>
                         <tr>
