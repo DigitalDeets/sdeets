@@ -66,9 +66,7 @@
         
         <div style="text-align:center;margin-top:30px;">
             {% if incompleteRegistration %}
-            <a href="{{buttonURL}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Complete my account</a>
-            {% elseif unregisteredParent %}
-            <a href="{{appURL}}/sdpost/{{postUrl}}?u={{userId}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Go to Post</a>
+            <a href="{{buttonURL}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Create an account</a>
             {% else %}
             <a href="{{appURL}}/sdpost/{{postUrl}}?u={{userId}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">Go to Post</a>
             {% endif %}

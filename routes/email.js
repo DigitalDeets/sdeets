@@ -41,7 +41,6 @@ module.exports = {
                 postAttachmentIcon: options.postAttachmentIcon,
                 incompleteRegistration: options.incompleteRegistration,
                 prospectiveParent: options.prospectiveParent,
-                unregisteredParent: options.unregisteredParent,
                 adsPosts: options.adsPosts,
                 sponsors: options.sponsors,
                 dd_categories: options.dd_categories,
