@@ -7,17 +7,17 @@
         <div style="text-align: center;margin:20px 0; font-weight: bold; line-height: 24px;">
             {% if senderName %}
                 {% if incompleteRegistration %}
-                Hello {% if receiverName %}{{receiverName}}{% else %}{{schoolName}} community member{% endif %}, <span style="color:#ee6c34">{{senderName}}</span> has {{postType}} the following message to {{schoolName}} {{group}}
+                Hello {% if receiverName %}{{receiverName}}{% else %}{{schoolName}} community member{% endif %}, <span style="color:#ee6c34">{{senderName}}</span> has {{postStatus}} the following message to {{schoolName}} {{group}}
                 {% elseif prospectiveParent %}
-                Hello {{schoolName}} Prospective Parent, <span style="color:#ee6c34">{{schoolName}}</span> has {{postType}} the following message to {{group}}
+                Hello {{schoolName}} Prospective Parent, <span style="color:#ee6c34">{{schoolName}}</span> has {{postStatus}} the following message to {{group}}
                 {% else %}
-                Hello{% if receiverName %} {{receiverName}}{% endif %}, <span style="color:#ee6c34">{{senderName}}</span> {{postType}} the following message to <span style="color:#ee6c34">{{group}}</span>
+                Hello{% if receiverName %} {{receiverName}}{% endif %}, <span style="color:#ee6c34">{{senderName}}</span> {{postStatus}} the following message to <span style="color:#ee6c34">{{group}}</span>
                 {% endif %}
             {% endif %}
         </div>  
         
         <div style="background:#ffffff;color:#333333;border-radius:5px;">
-            <div style="text-align:left;padding-bottom:25px;position:relative;font-size:14px;margin:0 auto;{% if !showAllImages %}max-width:880px;{% endif %}">
+            <div style="text-align:left;padding-bottom:25px;position:relative;font-size:14px;margin:0 auto;{% if !postType %}max-width:880px;{% endif %}">
                 <div style="padding:25px 25px 0 5%;">
                     <table>
                         <tr>
@@ -33,13 +33,13 @@
                 </div>
                 <div style="padding:0 5%;">
                     <div style="margin:15px 0;font-size:16px;font-weight:bold;">{{subject}}</div>
-                    {% if showAllImages && postImages %}
+                    {% if postType == 'newsletter' && postImages %}
                         {% for post_image in postImages %}
                         <div style="margin-bottom:10px;text-align:center;"><img src="{{post_image}}" style="max-width: 100%;" alt=""/></div>
                         {% endfor %} 
                     {% endif %}
                     
-                    {% if !showAllImages && postImage %}
+                    {% if !postImages && postImage %}
                     <div style="margin-bottom:10px;text-align:center;"><img src="{{postImage}}" style="max-width: 100%;" alt=""/></div>
                     {% endif %}
                     
@@ -75,8 +75,8 @@
         {% if adsPosts.ids %}
         <div style="margin:30px 0 5px;text-align:center;font-size: 18px;line-height: 22px;font-style:italic; color:#44999e;font-weight: bold;">Check out the latest community promotions from our sponsors</div>
         <div style="background-color:#ffffff;padding:10px 10px 5px 10px;margin:10px 0 20px;border-radius:5px;">
-            {% for post in adsPosts.posts %}
-            <div style="margin-bottom:5px;"><a href="{{appURL}}/dashboard/promotion/?id={{post.id}}&u={{userId}}&t=e" target="_blank" style="text-decoration:none;font-size:16px;line-height:22px;color:#222222;"><b style="color:#ee6c34">{{post.sponsor}}</b> - {{post.title}}</a></div>
+            {% for promotion in adsPosts.posts %}
+            <div style="margin-bottom:5px;"><a href="{{appURL}}/dashboard/promotion/?id={{promotion.id}}&u={{userId}}&t=e" target="_blank" style="text-decoration:none;font-size:16px;line-height:22px;color:#222222;"><b style="color:#ee6c34">{{promotion.sponsor}}</b> - {{promotion.title}}</a></div>
             {% endfor %}
         </div>
         {% endif %}
