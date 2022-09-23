@@ -41,10 +41,12 @@ module.exports = {
                 postAttachmentIcon: options.postAttachmentIcon,
                 incompleteRegistration: options.incompleteRegistration,
                 prospectiveParent: options.prospectiveParent,
-                adsPosts: options.adsPosts,
+                promotions: options.promotions,
+                promotionDD: options.promotionDD,
                 sponsors: options.sponsors,
                 dd_categories: options.dd_categories,
                 appURL: options.appURL,
+                buttonTitle: options.buttonTitle,
                 buttonURL: options.buttonURL
             });            
         }else if(options.template == 'post_notification_student'){
