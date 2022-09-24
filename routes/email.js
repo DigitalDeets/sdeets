@@ -27,8 +27,9 @@ module.exports = {
                 userEmail: options.receiver,
                 postUrl: options.postUrl,
                 groups: options.groups,
-                schoolIcon: options.schoolIcon,
-                schoolName: options.schoolName,
+                organizationIcon: options.organizationIcon,
+                organizationName: options.organizationName,
+                organizationAddress: options.organizationAddress,
                 authorAvatar: options.authorAvatar,
                 posterName: options.posterName,                    
                 postDate: options.postDate,
@@ -48,7 +49,24 @@ module.exports = {
                 appURL: options.appURL,
                 buttonTitle: options.buttonTitle,
                 buttonURL: options.buttonURL
-            });            
+            }); 
+        
+        }else if(options.template == 'digest'){
+            var html = template({                             
+                postId: options.postId,
+                userId: options.userId,
+                userEmail: options.receiver, 
+                organizationID: options.organizationID,
+                organizationName: options.organizationName,
+                organizationIcon: options.organizationIcon,
+                description: options.description,
+                content: options.content,
+                shareButtons: options.shareButtons,
+                templateVersion: options.templateVersion,
+                promotionIDs: options.promotionIDs,
+                appURL: options.appURL
+            });
+            
         }else if(options.template == 'post_notification_student'){
             var html = template({
                 receiverName: options.receiverName,
@@ -93,21 +111,6 @@ module.exports = {
                 postId: options.postId,
                 userId: options.userId,
                 userType: options.userType
-            });
-        }else if(options.template == 'digest'){
-            var html = template({                             
-                postId: options.postId,
-                userId: options.userId,
-                userEmail: options.receiver, 
-                organizationID: options.organizationID,
-                organizationName: options.organizationName,
-                organizationIcon: options.organizationIcon,
-                description: options.description,
-                content: options.content,
-                shareButtons: options.shareButtons,
-                templateVersion: options.templateVersion,
-                promotionIDs: options.promotionIDs,
-                appURL: options.appURL
             });
 
         }else if(options.template == 'account_parent_invitation'){

@@ -1,15 +1,15 @@
 <body style="background:#ffffff;margin:10px auto;max-width:{{templateWidth}}px;">
     <div style="display:block;font-weight:bold;margin-bottom: 15px;">
-        <img src="{{schoolIcon}}" width="50" style="vertical-align:middle;margin-right: 10px;border-radius: 3px;" alt="">
-        <span style="vertical-align:middle;font-size:16px;">{{schoolName}}</span>
+        <img src="{{organizationIcon}}" width="50" style="vertical-align:middle;margin-right: 10px;border-radius: 3px;" alt="">
+        <span style="vertical-align:middle;font-size:16px;">{{organizationName}}</span>
     </div>
     <div style="background:#f6f6f6;padding:2px 2% 15px;font-size:16px;line-height: 20px;font-family:'Arial', 'Helvetica-light', sans-serif;">
         <div style="text-align: center;margin:20px 0; font-weight: bold; line-height: 24px;">
             {% if senderName %}
                 {% if incompleteRegistration %}
-                Hello {% if receiverName %}{{receiverName}}{% else %}{{schoolName}} community member{% endif %}, <span style="color:#ee6c34">{{senderName}}</span> has {{postStatus}} the following message to {{schoolName}} {{group}}
+                Hello {% if receiverName %}{{receiverName}}{% else %}{{organizationName}} community member{% endif %}, <span style="color:#ee6c34">{{senderName}}</span> has {{postStatus}} the following message to {{organizationName}} {{group}}
                 {% elseif prospectiveParent %}
-                Hello {{schoolName}} Prospective Parent, <span style="color:#ee6c34">{{schoolName}}</span> has {{postStatus}} the following message to {{group}}
+                Hello {{organizationName}} Prospective Parent, <span style="color:#ee6c34">{{organizationName}}</span> has {{postStatus}} the following message to {{group}}
                 {% else %}
                 Hello{% if receiverName %} {{receiverName}}{% endif %}, <span style="color:#ee6c34">{{senderName}}</span> {{postStatus}} the following message to <span style="color:#ee6c34">{{group}}</span>
                 {% endif %}
@@ -157,18 +157,22 @@
             </div>
         </div>
         
-        <div style="text-align: center; color: #b3b3b1; font-size:12px">Sent by {{schoolName}} using the Digital Deets system, 2432 S. Downing Street, #105 Denver, CO 80210</div>
-        
-        <div style="margin-top:10px;font-size:12px;color:#b3b3b1;text-align:center;">
+        <div style="font-size:12px;color:#b3b3b1;text-align:center;">
             {% if incompleteRegistration %}
-            If you prefer to be removed from this list, please contact your organization directly.<br/>To stop receiving email notifications, go to <a style="color: #b3b3b1;text-decoration:underline;" href="{{appURL}}/unsubscribe?email={{userEmail}}&id={{userId}}" target="_blank">Unsubscribe</a>
+            Sent by {{organizationName}} using the Digital Deets system, {{organizationAddress}}.
+            <br>
+            <a style="color: #b3b3b1;text-decoration:underline;" href="{{appURL}}/unsubscribe?email={{userEmail}}&id={{userId}}" target="_blank">Unsubscribe</a>
             {% elseif prospectiveParent %}
-            If you prefer to be removed from this list, please contact your organization directly.<br/>To stop receiving email notifications, go to <a style="color: #b3b3b1;text-decoration:underline;" href="{{appURL}}/unsubscribe?email={{userEmail}}&id={{userId}}" target="_blank">Unsubscribe</a>
+            Sent by {{organizationName}} using the Digital Deets system, {{organizationAddress}}.
+            <br>
+            <a style="color: #b3b3b1;text-decoration:underline;" href="{{appURL}}/unsubscribe?email={{userEmail}}&id={{userId}}" target="_blank">Unsubscribe</a>
             {% else %}
-            If you prefer to be removed from this list, please contact your organization directly.<br/>To manage your push and email notification preferences, go to <a style="color: #b3b3b1;text-decoration:underline;" href="{{appURL}}/dashboard/notification-preferences" target="_blank">Manage notifications</a>
+            <div style="margin-bottom: 10px;">Sent by {{organizationName}} using the Digital Deets system, 2432 S. Downing Street, #105 Denver, CO 80210</div>
+            If you prefer to be removed from this list, please contact your organization directly.
+            <br>
+            To manage your push and email notification preferences, go to <a style="color: #b3b3b1;text-decoration:underline;" href="{{appURL}}/dashboard/notification-preferences" target="_blank">Manage notifications</a>
+            <div style="margin-top: 15px;">Please review our updated <a style="color: #b3b3b1;text-decoration:underline;" href="https://www.digitaldeets.com/terms-of-use">Terms of Service</a> and <a style="color: #b3b3b1;text-decoration:underline;" href="https://www.digitaldeets.com/privacy-policy">Privacy Policy</a>.</div>
             {% endif %}
-            <br/><br/>
-            Please review our updated <a style="color: #b3b3b1;text-decoration:underline;" href="https://www.digitaldeets.com/terms-of-use">Terms of Service</a> and <a style="color: #b3b3b1;text-decoration:underline;" href="https://www.digitaldeets.com/privacy-policy">Privacy Policy</a>.
         </div>
     </div>
     {% if promotions.ids %}
