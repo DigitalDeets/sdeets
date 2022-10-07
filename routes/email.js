@@ -30,6 +30,7 @@ module.exports = {
                 organizationIcon: options.organizationIcon,
                 organizationName: options.organizationName,
                 organizationAddress: options.organizationAddress,
+                organizationBrand: options.organizationBrand,
                 authorAvatar: options.authorAvatar,
                 posterName: options.posterName,                    
                 postDate: options.postDate,

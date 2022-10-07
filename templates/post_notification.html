@@ -7,11 +7,11 @@
         <div style="text-align: center;margin:20px 0; font-weight: bold; line-height: 24px;">
             {% if senderName %}
                 {% if incompleteRegistration %}
-                Hello {% if receiverName %}{{receiverName}}{% else %}{{organizationName}} community member{% endif %}, <span style="color:#ee6c34">{{senderName}}</span> has {{postStatus}} the following message to {{organizationName}} {{group}}
+                Hello {% if receiverName %}{{receiverName}}{% else %}{{organizationName}} community member{% endif %}, <span style="color:{{organizationBrand.primary_color}}">{{senderName}}</span> has {{postStatus}} the following message to {{organizationName}} {{group}}
                 {% elseif prospectiveParent %}
-                Hello {{organizationName}} Prospective Parent, <span style="color:#ee6c34">{{organizationName}}</span> has {{postStatus}} the following message to {{group}}
+                Hello {{organizationName}} Prospective Parent, <span style="color:{{organizationBrand.primary_color}}">{{organizationName}}</span> has {{postStatus}} the following message to {{group}}
                 {% else %}
-                Hello{% if receiverName %} {{receiverName}}{% endif %}, <span style="color:#ee6c34">{{senderName}}</span> {{postStatus}} the following message to <span style="color:#ee6c34">{{group}}</span>
+                Hello{% if receiverName %} {{receiverName}}{% endif %}, <span style="color:{{organizationBrand.primary_color}}">{{senderName}}</span> {{postStatus}} the following message to <span style="color:{{organizationBrand.primary_color}}">{{group}}</span>
                 {% endif %}
             {% endif %}
         </div>  
@@ -53,7 +53,7 @@
                 </div>
 
                 {% if postType == 'newsletter' && promotions.total %}
-                <div style="margin:20px 0 5px;text-align:center;font-size: 18px;line-height: 22px;font-style:italic; color:#44999e;font-weight: bold;">Check out the latest community promotions from our sponsors</div>
+                <div style="margin:20px 0 5px;text-align:center;font-size: 18px;line-height: 22px;font-style:italic; color:{{organizationBrand.secondary_color}};font-weight: bold;">Check out the latest community promotions from our sponsors</div>
                 <div style="margin:10px 0 0;text-align:center;">
                     {% for promotion in promotions.data %}
                     <div style="display:inline-block;width:300px;vertical-align:top;">
@@ -85,9 +85,9 @@
         
         <div style="text-align:center;margin-top:30px;">
             {% if incompleteRegistration %}
-            <a href="{{buttonURL}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">{{buttonTitle}}</a>
+            <a href="{{buttonURL}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background-color:{{organizationBrand.primary_color}};color:#ffffff;border-radius: 4px;" target="_blank">{{buttonTitle}}</a>
             {% else %}
-            <a href="{{buttonURL}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background: #f06e34;color: #fff;border-radius: 4px;" target="_blank">{{buttonTitle}}</a>
+            <a href="{{buttonURL}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background-color:{{organizationBrand.primary_color}};color:#ffffff;border-radius: 4px;" target="_blank">{{buttonTitle}}</a>
             {% endif %}
         </div>
         
@@ -108,10 +108,10 @@
         {% endif %}
         
         {% if !postType && promotions.total %}
-        <div style="margin:30px 0 5px;text-align:center;font-size: 18px;line-height: 22px;font-style:italic; color:#44999e;font-weight: bold;">Check out the latest community promotions from our sponsors</div>
+        <div style="margin:30px 0 5px;text-align:center;font-size: 18px;line-height: 22px;font-style:italic; color:{{organizationBrand.secondary_color}};font-weight: bold;">Check out the latest community promotions from our sponsors</div>
         <div style="background-color:#ffffff;padding:10px 10px 5px 10px;margin:10px 0 20px;border-radius:5px;">
             {% for promotion in promotions.data %}
-            <div style="margin-bottom:5px;"><a href="{{appURL}}/dashboard/promotion/?id={{promotion.id}}&u={{userId}}&t=e" target="_blank" style="text-decoration:none;font-size:16px;line-height:22px;color:#222222;"><b style="color:#ee6c34">{{promotion.sponsor}}</b> - {{promotion.title}}</a></div>
+            <div style="margin-bottom:5px;"><a href="{{appURL}}/dashboard/promotion/?id={{promotion.id}}&u={{userId}}&t=e" target="_blank" style="text-decoration:none;font-size:16px;line-height:22px;color:#222222;"><b style="color:{{organizationBrand.primary_color}}">{{promotion.sponsor}}</b> - {{promotion.title}}</a></div>
             {% endfor %}
         </div>
         {% endif %}
@@ -132,7 +132,7 @@
         {% if dd_categories %}
         <div style="margin: 25px 0 5px;text-align:center;">
             <div style="margin-bottom:5px;">
-                <a href="https://catalog.digitaldeets.com/" target="_blank" style="font-size: 18px;line-height:22px;font-style:italic;color:#44999e;font-weight:bold;text-decoration:none;">Explore Catalog Listings</a>
+                <a href="https://catalog.digitaldeets.com/" target="_blank" style="font-size: 18px;line-height:22px;font-style:italic;color:{{organizationBrand.secondary_color}};font-weight:bold;text-decoration:none;">Explore Catalog Listings</a>
             </div>
             <div>
                 {% for dd_category in dd_categories %}
