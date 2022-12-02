@@ -47,7 +47,6 @@ module.exports = {
                 promotions: options.promotions,
                 featuredSponsor: options.featuredSponsor,
                 promotionIDs: options.promotionIDs,
-                promotionDD: options.promotionDD,
                 appURL: options.appURL,
                 buttonTitle: options.buttonTitle,
                 buttonURL: options.buttonURL
