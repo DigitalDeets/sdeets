@@ -54,23 +54,25 @@
             </div>
         </div>
         
-        {% if incompleteRegistration %}
-        <div style="margin:20px 10px;font-size:14px;line-height:20px;font-style:italic;">
-            <p>This organization is sending emails using Digital Deets to communicate with you. You can set up an account for full access to the system. Once you create your account, you can access communication from our mobile and web applications, manage your account preferences, view every image sent with every post, and access more information from your organization.</p>
-        </div>
-        {% elseif prospectiveParent %}
-        <div style="margin:20px 10px;font-size:14px;line-height:20px;font-style:italic;">
-            <p>This organization is sending emails using Digital Deets to communicate with you. You can set up an account for full access to the system. Once you create your account, you can access communication from our mobile and web applications, manage your account preferences, view every image sent with every post, and access more information from your organization.</p>
-        </div>
-        {% endif %}
-        
-        <div style="text-align:center;margin-top:30px;">
+        {% if !organizationIsHighSchool %}
             {% if incompleteRegistration %}
-            <a href="{{buttonURL}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background-color:{{organizationBrand.primary_color}};color:#ffffff;border-radius: 4px;" target="_blank">{{buttonTitle}}</a>
-            {% else %}
-            <a href="{{buttonURL}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background-color:{{organizationBrand.primary_color}};color:#ffffff;border-radius: 4px;" target="_blank">{{buttonTitle}}</a>
+            <div style="margin:20px 10px;font-size:14px;line-height:20px;font-style:italic;">
+                <p>This organization is sending emails using Digital Deets to communicate with you. You can set up an account for full access to the system. Once you create your account, you can access communication from our mobile and web applications, manage your account preferences, view every image sent with every post, and access more information from your organization.</p>
+            </div>
+            {% elseif prospectiveParent %}
+            <div style="margin:20px 10px;font-size:14px;line-height:20px;font-style:italic;">
+                <p>This organization is sending emails using Digital Deets to communicate with you. You can set up an account for full access to the system. Once you create your account, you can access communication from our mobile and web applications, manage your account preferences, view every image sent with every post, and access more information from your organization.</p>
+            </div>
             {% endif %}
-        </div>
+
+            <div style="text-align:center;margin-top:30px;">
+                {% if incompleteRegistration %}
+                <a href="{{buttonURL}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background-color:{{organizationBrand.primary_color}};color:#ffffff;border-radius: 4px;" target="_blank">{{buttonTitle}}</a>
+                {% else %}
+                <a href="{{buttonURL}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background-color:{{organizationBrand.primary_color}};color:#ffffff;border-radius: 4px;" target="_blank">{{buttonTitle}}</a>
+                {% endif %}
+            </div>
+        {% endif %}
         
         {% if featuredSponsor || promotions.total %}
             <div style="margin:30px 0 5px;text-align:center;font-size: 18px;line-height: 22px;font-style:italic; color:{{organizationBrand.secondary_color}};font-weight: bold;">Check out the latest community promotions from our sponsors</div>
@@ -128,6 +130,27 @@
             {% endif %}
         {% endif %}
         
+        {% if organizationIsHighSchool %}
+            {% if incompleteRegistration %}
+            <div style="margin:20px 10px;font-size:14px;line-height:20px;font-style:italic;">
+                <p>This organization is sending emails using Digital Deets to communicate with you. You can set up an account for full access to the system. Once you create your account, you can access communication from our mobile and web applications, manage your account preferences, view every image sent with every post, and access more information from your organization.</p>
+            </div>
+            {% elseif prospectiveParent %}
+            <div style="margin:20px 10px;font-size:14px;line-height:20px;font-style:italic;">
+                <p>This organization is sending emails using Digital Deets to communicate with you. You can set up an account for full access to the system. Once you create your account, you can access communication from our mobile and web applications, manage your account preferences, view every image sent with every post, and access more information from your organization.</p>
+            </div>
+            {% endif %}
+
+            <div style="text-align:center;margin-top:30px;">
+                {% if incompleteRegistration %}
+                <a href="{{buttonURL}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background-color:{{organizationBrand.primary_color}};color:#ffffff;border-radius: 4px;" target="_blank">{{buttonTitle}}</a>
+                {% else %}
+                <a href="{{buttonURL}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background-color:{{organizationBrand.primary_color}};color:#ffffff;border-radius: 4px;" target="_blank">{{buttonTitle}}</a>
+                {% endif %}
+            </div>        
+        {% endif %}
+        
+        
         {% if socialMedia %}
         <div style="margin:25px 0 5px;text-align:center;">
             <div style="font-size:16px;line-height:22px;font-style:italic;text-align: center;">{{socialMedia.label}}</div>
@@ -147,6 +170,7 @@
         </div>
         {% endif %}
         
+        {% if organizationSponsorFlyer %}
         <div style="margin:25px 0 5px;text-align:center;">
             <div style="font-size:16px;line-height:22px;font-style:italic;">Become a sponsor</div>
             <a href="{{organizationSponsorFlyer}}" style="display:inline-block;width:120px;height:120px;margin:5px;text-align:center;text-decoration:none;background:{{organizationBrand.primary_color}};border-radius:5px;" target="_blank">
@@ -154,6 +178,7 @@
                 <span style="display:block;font-size:14px;line-height:20px;font-weight:bold;text-transform:uppercase;color:#ffffff;">Sponsor this organization</span>
             </a>
         </div>
+        {% endif %}
         
         <div style="border-top: 1px solid #cac5c5; text-align: center; margin-top:25px;">
             <div style="margin-top:5px">
