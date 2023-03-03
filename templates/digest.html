@@ -34,26 +34,30 @@
             </div>
         </div>
 
-        <div style="margin-bottom:5px;text-align:center;color:#b3b3b1;font-size:12px">
-            {% if templateVersion == '1' %}
-            Sent by Digital Deets, 4041 S. Narcissus Way, Denver, CO, 80237            
-            {% elseif templateVersion == '2' %}
-            Sent by {{organizationName}} using the Digital Deets system, 4041 S. Narcissus Way, Denver, CO, 80237
-            {% elseif templateVersion == '3' %}
-            Sent by Digital Deets, 4041 S. Narcissus Way, Denver, CO, 80237
-            {% endif %}
-        </div>
+        <div style="font-size:12px;color:#b3b3b1;text-align:center;">
+            <div style="margin-bottom:5px;">
+                {% if templateVersion == '1' %}
+                Sent by Digital Deets, 4041 S. Narcissus Way, Denver, CO, 80237            
+                {% elseif templateVersion == '2' %}
+                Sent by {{organizationName}} using the Digital Deets system, 4041 S. Narcissus Way, Denver, CO, 80237
+                {% elseif templateVersion == '3' %}
+                Sent by Digital Deets, 4041 S. Narcissus Way, Denver, CO, 80237
+                {% endif %}
+            </div>
 
-        <div style="margin-top:5px;font-size:12px;color:#b3b3b1;text-align:center;">
-            {% if templateVersion == '1' %}
-            Your favorite fundraising organization raises money each time you open and read the local Deets Digest.<br>
-            It’s filled with valuable information from community organizations and businesses right outside your door.<br>
-            If you would like them to stop forwarding it, let the sender know.
-            {% elseif templateVersion == '2' %}
-            If you prefer to not receive the Deets Digest from {{organizationName}}, you can unsubscribe <a href="{{appURL}}/unsubscribe-digest?email={{userEmail}}&id={{userId}}&digest_id={{postId}}" style="color: #b3b3b1;text-decoration:underline;" target="_blank">here</a>.<br>You will only be unsubscribed from the Deets Digest and not from other communications.
-            {% elseif templateVersion == '3' %}
-            If you prefer to not receive the Deets Digest Business Summary, you can unsubscribe <a href="{{appURL}}/unsubscribe-digest?email={{userEmail}}&id={{userId}}&digest_id={{postId}}" style="color: #b3b3b1;text-decoration:underline;" target="_blank">here</a>.
-            {% endif %}
+            <div style="margin:5px 0 10px;">
+                {% if templateVersion == '1' %}
+                Your favorite fundraising organization raises money each time you open and read the local Sponsor Spotlight.<br>
+                It’s filled with valuable information from community organizations and businesses right outside your door.<br>
+                If you would like them to stop forwarding it, let the sender know.
+                {% elseif templateVersion == '2' %}
+                If you prefer to not receive the Sponsor Spotlight from {{organizationName}}, you can unsubscribe <a href="{{appURL}}/unsubscribe-sponsor-spotlight?email={{userEmail}}&id={{userId}}&pid={{postId}}" style="color:{{organizationBrand.secondary_color}};text-decoration:underline;" target="_blank">here</a>.<br>You will only be unsubscribed from the Sponsor Spotlight and not from other communications.
+                {% elseif templateVersion == '3' %}
+                If you prefer to not receive the Sponsor Spotlight Business Summary, you can unsubscribe <a href="{{appURL}}/unsubscribe-sponsor-spotlight?email={{userEmail}}&id={{userId}}&pid={{postId}}" style="color:{{organizationBrand.secondary_color}};text-decoration:underline;" target="_blank">here</a>.
+                {% endif %}
+            </div>
+
+            <div>Questions for Digital Deets? <a href="https://digitaldeets.com/contact/" style="text-decoration: none;color:{{organizationBrand.secondary_color}};">Contact us</a>.</div>
         </div>
     </div>
     {% if promotionIDs %}

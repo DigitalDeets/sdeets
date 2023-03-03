@@ -62,6 +62,7 @@ module.exports = {
                 organizationID: options.organizationID,
                 organizationName: options.organizationName,
                 organizationIcon: options.organizationIcon,
+                organizationBrand: options.organizationBrand,
                 description: options.description,
                 content: options.content,
                 shareButtons: options.shareButtons,
