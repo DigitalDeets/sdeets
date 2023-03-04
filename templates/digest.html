@@ -25,10 +25,10 @@
             <div style="margin-top:5px">
                 <div style="text-align: center; margin:10px 0">
                     <div style="padding: 5px 20px; display:inline-block;font-size:12px;">
-                        <a style="text-decoration:none;color: #0c769d;" href="https://itunes.apple.com/us/app/school-deets/id1109287736?mt=8" target="_blank">Download in iTunes</a>
+                        <a style="text-decoration:none;color:{{organizationBrand.secondary_color}}" href="https://itunes.apple.com/us/app/school-deets/id1109287736?mt=8" target="_blank">Download in iTunes</a>
                     </div>
                     <div style="padding: 5px 20px; display:inline-block;font-size:12px;"> 
-                        <a style="text-decoration:none;color: #0c769d;" href="https://play.google.com/store/apps/details?id=com.schooldeets.app&hl=en" target="_blank">Download in Google Play</a>
+                        <a style="text-decoration:none;color:{{organizationBrand.secondary_color}}" href="https://play.google.com/store/apps/details?id=com.schooldeets.app&hl=en" target="_blank">Download in Google Play</a>
                     </div>
                 </div>
             </div>
@@ -51,9 +51,9 @@
                 It’s filled with valuable information from community organizations and businesses right outside your door.<br>
                 If you would like them to stop forwarding it, let the sender know.
                 {% elseif templateVersion == '2' %}
-                If you prefer to not receive the Sponsor Spotlight from {{organizationName}}, you can unsubscribe <a href="{{appURL}}/unsubscribe-sponsor-spotlight?email={{userEmail}}&id={{userId}}&pid={{postId}}" style="color:{{organizationBrand.secondary_color}};text-decoration:underline;" target="_blank">here</a>.<br>You will only be unsubscribed from the Sponsor Spotlight and not from other communications.
+                If you prefer to not receive the Sponsor Spotlight from {{organizationName}}, you can unsubscribe <a href="{{appURL}}/unsubscribe-sponsor-spotlight?email={{userEmail}}&id={{userId}}&pid={{postId}}" style="color:#b3b3b1;text-decoration:underline;" target="_blank">here</a>.<br>You will only be unsubscribed from the Sponsor Spotlight and not from other communications.
                 {% elseif templateVersion == '3' %}
-                If you prefer to not receive the Sponsor Spotlight Business Summary, you can unsubscribe <a href="{{appURL}}/unsubscribe-sponsor-spotlight?email={{userEmail}}&id={{userId}}&pid={{postId}}" style="color:{{organizationBrand.secondary_color}};text-decoration:underline;" target="_blank">here</a>.
+                If you prefer to not receive the Sponsor Spotlight Business Summary, you can unsubscribe <a href="{{appURL}}/unsubscribe-sponsor-spotlight?email={{userEmail}}&id={{userId}}&pid={{postId}}" style="color:#b3b3b1;text-decoration:underline;" target="_blank">here</a>.
                 {% endif %}
             </div>
 
