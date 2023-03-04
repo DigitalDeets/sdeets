@@ -19,17 +19,19 @@
         <div style="background:#ffffff;color:#333333;border-radius:5px;">
             <div style="text-align:left;padding-bottom:25px;position:relative;font-size:14px;margin:0 auto;{% if !postType %}max-width:880px;{% endif %}">
                 <div style="padding:25px 25px 0 5%;">
-                    <table>
-                        <tr>
-                            <td style="width:60px;vertical-align:top;"><img src="{{groups[0].avatar}}" alt="" style="display:inline-block;width:40px;height:40px;margin-top:4px;border-radius:3px;box-shadow:0 2px 5px 0 rgba(0,0,0,.26);"></td>
-                            <td>
-                            {% for postGroup in groups %}
-                            <span style="display:block;"><img src="{{postGroup.avatar}}" width="14" style="vertical-align:middle;" alt="" />&nbsp;<span style="vertical-align: middle;">{{postGroup.name}}</span></span>
-                            {% endfor %} 
-                            {% if senderName %}<span style="display:block;"><img src="{{authorAvatar}}" width="14" style="vertical-align:middle;" alt="" />&nbsp;<span style="vertical-align: middle;">{{posterName}}</span></span>{% endif %}<span style="display: block;"><img src="{{appURL}}/wp-content/themes/sdthm/img/clock.png" width="14" style="vertical-align: middle;" alt="" />&nbsp;<span style="vertical-align:middle;">{{postDate}}</span></span>
-                            </td>
-                        </tr>
-                    </table>
+                    {% for postGroup in groups %}
+                    <div>
+                        <img src="{{postGroup.avatar}}" width="14" style="vertical-align:middle;" alt="" />&nbsp;<span style="vertical-align: middle;">{{postGroup.name}}</span>   
+                    </div>
+                    {% endfor %} 
+                    {% if senderName %}
+                    <div>
+                        <img src="{{authorAvatar}}" width="14" style="vertical-align:middle;" alt="" />&nbsp;<span style="vertical-align: middle;">{{senderName}}</span>
+                    </div>
+                    {% endif %}
+                    <div>
+                        <img src="{{appURL}}/wp-content/themes/sdthm/img/clock.png" width="14" style="vertical-align: middle;" alt="" />&nbsp;<span style="vertical-align:middle;">{{postDate}}</span>
+                    </div>
                 </div>
                 <div style="padding:0 5%;">
                     <div style="margin:15px 0;font-size:16px;font-weight:bold;">{{subject}}</div>
