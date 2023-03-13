@@ -1,7 +1,5 @@
 var nodemailer = require("nodemailer");
-var xoauth2 = require('xoauth2');
 var swig = require('swig');
-var ses = require('nodemailer-ses-transport');
 
 var transporter = nodemailer.createTransport('SES', {
     AWSAccessKeyID: process.env.AWS_KEY,
@@ -12,9 +10,10 @@ var transporter = nodemailer.createTransport('SES', {
 module.exports = {
     send:function( options, err, cb ){
         var template = swig.compileFile(__dirname + `/../templates/${options.template}.html`);
-
+        var html = '';
+        
         if(options.template == 'post_notification'){
-            var html = template({
+            html = template({
                 receiverName: options.receiverName,
                 senderName: options.senderName,
                 content: options.content,
@@ -52,7 +51,7 @@ module.exports = {
             }); 
         
         }else if(options.template == 'digest'){
-            var html = template({                             
+            html = template({                             
                 postId: options.postId,
                 userId: options.userId,
                 userEmail: options.receiver, 
@@ -68,32 +67,8 @@ module.exports = {
                 appURL: options.appURL
             });
             
-        }else if(options.template == 'post_notification_student'){
-            var html = template({
-                receiverName: options.receiverName,
-                senderName: options.senderName,
-                content: options.content,
-                group: options.group,
-                postType: options.postType,
-                subject: options.subject,
-                postId: options.postId,
-                studentId: options.studentId,
-                groups: options.groups,
-                schoolIcon: options.schoolIcon,
-                schoolName: options.schoolName,
-                authorAvatar: options.authorAvatar,
-                posterName: options.posterName,                    
-                postDate: options.postDate,
-                postImage: options.postImage,
-                postVideoLink: options.postVideoLink,
-                postVideoIcon: options.postVideoIcon,
-                postAttachmentLink: options.postAttachmentLink,
-                postAttachmentIcon: options.postAttachmentIcon,
-                appURL: options.appURL
-            });
-  
         }else if(options.template == 'promotion_notification'){
-            var html = template({
+            html = template({
                 subject: options.subject,
                 receiverName: options.receiverName,
                 organizationName: options.organizationName,
@@ -115,7 +90,7 @@ module.exports = {
             });
 
         }else if(options.template == 'account_parent_invitation'){
-            var html = template({
+            html = template({
                 receiverName: options.receiverName,
                 schoolName: options.schoolName,
                 userId: options.userId,
@@ -123,19 +98,13 @@ module.exports = {
             });
 
         }else if(options.template == 'welcome_prospective_parent'){
-            var html = template({
+            html = template({
                 receiverName: options.receiverName,
                 schoolName: options.schoolName,
                 content: options.content
             });
-        }else if(options.template == 'influencer_invitation'){
-            var html = template({
-                receiverName: options.receiverName,
-                schoolName: options.schoolName,
-                agreeLink: options.agreeLink
-            });
         }else if(options.template == 'notification'){
-            var html = template({
+            html = template({
                 headerContent: options.headerContent,
                 content: options.content,
                 buttonLink: options.buttonLink,
@@ -164,6 +133,13 @@ module.exports = {
             to:         options.receiver,
             subject:    options.subject,
             html:       html
+        }
+        
+        if(options.attachment != undefined){
+            mailOptions.attachments =  [{
+                fileName: options.attachment.name,
+                filePath: options.attachment.url
+            }];
         }
 
         // send mail with defined transport object

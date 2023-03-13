@@ -1,11 +1,13 @@
 <body style="background:#ffffff;max-width:1000px;margin:10px auto;">
+    {% if description %}
     <div style="display:block;font-weight:bold;margin-bottom: 15px;">
         <img src="{{organizationIcon}}" width="50" style="vertical-align:middle;margin-right: 10px;border-radius: 3px;" alt="">
         <span style="vertical-align:middle;font-size:16px;">{{description}}</span>
     </div>
+    {% endif %}
     <div style="background:#f6f6f6;padding:20px 2% 15px;font-size:16px;line-height: 20px;font-family:'Arial', 'Helvetica-light', sans-serif;">
         <div style="background:#ffffff;color:#333333;border-radius:5px;">
-            <div style="text-align:left;padding:0 5px 15px;position:relative;font-size:14px;max-width:880px;margin:0 auto;">
+            <div style="text-align:left;padding:10px 5px 15px;position:relative;font-size:14px;max-width:880px;margin:0 auto;">
                 {{content|safe}}
                 
                 {% if templateVersion == '2' %}
