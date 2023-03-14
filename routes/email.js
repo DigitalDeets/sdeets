@@ -61,6 +61,7 @@ module.exports = {
                 organizationBrand: options.organizationBrand,
                 description: options.description,
                 content: options.content,
+                footer_content: options.footer_content,
                 shareButtons: options.shareButtons,
                 templateVersion: options.templateVersion,
                 promotionIDs: options.promotionIDs,

@@ -48,15 +48,7 @@
             </div>
 
             <div style="margin:5px 0 10px;">
-                {% if templateVersion == '1' %}
-                Your favorite fundraising organization raises money each time you open and read the local Motivate Moment.<br>
-                It’s filled with valuable information from community organizations and businesses right outside your door.<br>
-                If you would like them to stop forwarding it, let the sender know.
-                {% elseif templateVersion == '2' %}
-                If you prefer to not receive the Motivate Moment from {{organizationName}}, you can unsubscribe <a href="{{appURL}}/unsubscribe-motivate-moments?email={{userEmail}}&id={{userId}}&pid={{postId}}" style="color:#b3b3b1;text-decoration:underline;" target="_blank">here</a>.
-                {% elseif templateVersion == '3' %}
-                If you prefer to not receive the Motivate Moment, you can unsubscribe <a href="{{appURL}}/unsubscribe-motivate-moments?email={{userEmail}}&id={{userId}}&pid={{postId}}" style="color:#b3b3b1;text-decoration:underline;" target="_blank">here</a>.
-                {% endif %}
+                {{footer_content|safe}}
             </div>
 
             <div>Questions for Digital Deets? <a href="https://digitaldeets.com/contact/" style="text-decoration: none;color:{{organizationBrand.secondary_color}};">Contact us</a>.</div>
