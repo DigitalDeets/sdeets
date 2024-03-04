@@ -29,7 +29,7 @@ module.exports = {
                 organizationAddress: options.organizationAddress,
                 organizationBrand: options.organizationBrand,
                 organizationSponsorFlyer: options.organizationSponsorFlyer,
-                organizationIsHighSchool: options.organizationIsHighSchool,
+                organizationType: options.organizationType,
                 authorAvatar: options.authorAvatar,                   
                 postDate: options.postDate,
                 postImage: options.postImage,

@@ -44,7 +44,7 @@
             </div>
         </div>
         
-        {% if !organizationIsHighSchool %}
+        {% if organizationType != 'High School' && organizationType != 'Business' && organizationType != 'Fundraising Organization'%}
             {% if incompleteRegistration %}
             <div style="margin:20px 10px;font-size:14px;line-height:20px;font-style:italic;">
                 <p>This organization is sending emails using Digital Deets to communicate with you. You can set up an account for full access to the system. Once you create your account, you can access communication from our mobile and web applications, manage your account preferences, view every image sent with every post, and access more information from your organization.</p>
@@ -65,7 +65,13 @@
         {% endif %}
         
         {% if featuredSponsor || promotions.total %}
-            <div style="margin:30px 0 5px;text-align:center;font-size: 18px;line-height: 22px;font-style:italic; color:{{organizationBrand.secondary_color}};font-weight: bold;">Check out the latest community promotions from our sponsors</div>
+        <div style="margin:30px 0 5px;text-align:center;font-size: 18px;line-height: 22px;font-style:italic; color:{{organizationBrand.secondary_color}};font-weight: bold;">
+            {% if organizationType == 'Fundraising Organization'%}
+            Check out the latest information from our supporters
+            {% else %}
+            Check out the latest community promotions from our sponsors
+            {% endif %}
+            </div>
         
             {% if featuredSponsor %}
             <div style="text-align: center;">
@@ -120,7 +126,7 @@
             {% endif %}
         {% endif %}
         
-        {% if organizationIsHighSchool %}
+        {% if organizationType == 'High School' || organizationType == 'Business' %}
             {% if incompleteRegistration %}
             <div style="margin:20px 10px;font-size:14px;line-height:20px;font-style:italic;">
                 <p>This organization is sending emails using Digital Deets to communicate with you. You can set up an account for full access to the system. Once you create your account, you can access communication from our mobile and web applications, manage your account preferences, view every image sent with every post, and access more information from your organization.</p>
@@ -162,14 +168,28 @@
         
         {% if organizationSponsorFlyer %}
         <div style="margin:25px 0 5px;text-align:center;">
-            <div style="font-size:16px;line-height:22px;font-style:italic;">Become a sponsor</div>
+            <div style="font-size:16px;line-height:22px;font-style:italic;">
+                {% if organizationType == 'Fundraising Organization' %}
+                Become a supporter
+                {% else %}
+                Become a sponsor
+                {% endif %}
+            </div>
+
             <a href="{{organizationSponsorFlyer}}" style="display:inline-block;width:120px;height:120px;margin:5px;text-align:center;text-decoration:none;background:{{organizationBrand.primary_color}};border-radius:5px;" target="_blank">
                 <img src="{{organizationIcon}}" width="50" style="border-radius:3px;display: inline-block;margin: 12px 0 3px;" alt="">
-                <span style="display:block;font-size:14px;line-height:20px;font-weight:bold;text-transform:uppercase;color:#ffffff;">Sponsor this organization</span>
+                <span style="display:block;font-size:14px;line-height:20px;font-weight:bold;text-transform:uppercase;color:#ffffff;">
+                    {% if organizationType == 'Fundraising Organization' %}
+                    Support this organization
+                    {% else %}
+                    Sponsor this organization
+                    {% endif %}
+                </span>
             </a>
         </div>
         {% endif %}
         
+        {% if organizationType != 'Business' && organizationType != 'Fundraising Organization'%}
         <div style="border-top: 1px solid #cac5c5; text-align: center; margin-top:25px;">
             <div style="margin-top:5px">
                 <div style="text-align: center; margin:10px 0">
@@ -182,6 +202,7 @@
                 </div>
             </div>
         </div>
+        {% endif %}
         
         <div style="font-size:12px;color:#b3b3b1;text-align:center;">
             <div style="margin-bottom: 10px;">Sent by {{organizationName}} using the Digital Deets system, {{organizationAddress}}</div>
