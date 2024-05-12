@@ -1,7 +1,12 @@
 <body style="background:#ffffff;margin:10px auto;max-width:{{templateWidth}}px;">
     <div style="display:block;font-weight:bold;margin-bottom: 15px;">
+        {% if DDnotification %}
+        <img src="https://app.digitaldeets.com/wp-content/themes/sdthm/img/digital-deets-logo-small.jpg" width="50" style="vertical-align:middle;margin-right: 10px;border-radius: 3px;" alt="">
+        <span style="vertical-align:middle;font-size:16px;">Digital Deets</span>
+        {% else %}
         <img src="{{organizationIcon}}" width="50" style="vertical-align:middle;margin-right: 10px;border-radius: 3px;" alt="">
         <span style="vertical-align:middle;font-size:16px;">{{organizationName}}</span>
+        {% endif %}
     </div>
     <div style="background:#f6f6f6;padding:20px 2% 15px;font-size:16px;line-height: 20px;font-family:'Arial', 'Helvetica-light', sans-serif;">        
         <div style="background:#ffffff;color:#333333;border-radius:5px;">
@@ -44,10 +49,14 @@
             </div>
         </div>
         
-        {% if organizationType != 'High School' && organizationType != 'Business' && organizationType != 'Fundraising Organization'%}
+        {% if organizationType != 'High School' && organizationType != 'Business' && organizationType != 'Fundraising Organization' %}
             {% if incompleteRegistration %}
             <div style="margin:20px 10px;font-size:14px;line-height:20px;font-style:italic;">
+                {% if DDnotification %}
+                <p>{{organizationName}} uses Digital Deets to recognize it’s supporters. Set up an account to easily access this information in the future.</p>
+                {% else %}
                 <p>This organization is sending emails using Digital Deets to communicate with you. You can set up an account for full access to the system. Once you create your account, you can access communication from our mobile and web applications, manage your account preferences, view every image sent with every post, and access more information from your organization.</p>
+                {% endif %}
             </div>
             {% elseif prospectiveParent %}
             <div style="margin:20px 10px;font-size:14px;line-height:20px;font-style:italic;">
@@ -61,6 +70,15 @@
                 {% else %}
                 <a href="{{buttonURL}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background-color:{{organizationBrand.primary_color}};color:#ffffff;border-radius: 4px;" target="_blank">{{buttonTitle}}</a>
                 {% endif %}
+            </div>
+            
+        {% elseif DDnotification && incompleteRegistration && organizationType == 'Fundraising Organization' %}
+            <div style="margin:20px 10px;font-size:14px;line-height:20px;font-style:italic;">
+                <p>{{organizationName}} uses Digital Deets to recognize it’s supporters. Set up an account to easily access this information in the future.</p>
+            </div>
+        
+            <div style="text-align:center;margin-top:30px;">
+                <a href="{{buttonURL}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background-color:{{organizationBrand.primary_color}};color:#ffffff;border-radius: 4px;" target="_blank">{{buttonTitle}}</a>
             </div>
         {% endif %}
         
@@ -195,7 +213,7 @@
         </div>
         {% endif %}
         
-        {% if organizationType != 'Business' && organizationType != 'Fundraising Organization' %}
+        {% if !DDnotification && organizationType != 'Business' && organizationType != 'Fundraising Organization' %}
         <div style="border-top: 1px solid #cac5c5; text-align: center; margin-top:25px;">
             <div style="margin-top:5px">
                 <div style="text-align: center; margin:10px 0">
@@ -211,7 +229,11 @@
         {% endif %}
         
         <div style="font-size:12px;color:#b3b3b1;text-align:center;">
+            {% if DDnotification %}
+            <div style="margin-bottom: 10px;">Sent by Digital Deets. 4041 S Narcissus Way, Denver, CO 80237</div>
+            {% else %}         
             <div style="margin-bottom: 10px;">Sent by {{organizationName}} using the Digital Deets system, {{organizationAddress}}</div>
+            {% endif %}
             
             <div style="margin-bottom: 10px;">
             {% if incompleteRegistration || prospectiveParent || organizationType == 'Fundraising Organization'%}

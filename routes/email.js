@@ -39,6 +39,7 @@ module.exports = {
                 postVideoIcon: options.postVideoIcon,
                 postAttachmentLink: options.postAttachmentLink,
                 postAttachmentIcon: options.postAttachmentIcon,
+                DDnotification: options.DDnotification,
                 incompleteRegistration: options.incompleteRegistration,
                 prospectiveParent: options.prospectiveParent,
                 promotions: options.promotions,
