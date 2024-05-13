@@ -72,10 +72,12 @@
                 {% endif %}
             </div>
             
-        {% elseif DDnotification && incompleteRegistration && organizationType == 'Fundraising Organization' %}
+        {% elseif DDnotification && organizationType == 'Fundraising Organization' %}
+            {% if incompleteRegistration %}
             <div style="margin:20px 10px;font-size:14px;line-height:20px;font-style:italic;">
                 <p>{{organizationName}} uses Digital Deets to recognize it’s supporters. Set up an account to easily access this information in the future.</p>
             </div>
+            {% endif %}
         
             <div style="text-align:center;margin-top:30px;">
                 <a href="{{buttonURL}}" style="display: inline-block; text-decoration:none; padding: 12px 15px; text-align: center;background-color:{{organizationBrand.primary_color}};color:#ffffff;border-radius: 4px;" target="_blank">{{buttonTitle}}</a>
