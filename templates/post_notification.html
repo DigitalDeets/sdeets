@@ -85,11 +85,19 @@
         {% endif %}
         
         {% if featuredSponsor || promotions.total %}
-        <div style="margin:30px 0 5px;text-align:center;font-size: 18px;line-height: 22px;font-style:italic; color:{{organizationBrand.secondary_color}};font-weight: bold;">
-            {% if organizationType == 'Fundraising Organization' || organizationType == 'Grandfathered Schools'  %}
-            Check out the latest information from our supporters
-            {% else %}
-            Check out the latest community promotions from our sponsors
+            <div style="margin:30px 0 5px;text-align:center;font-size: 18px;line-height: 22px;font-style:italic; color:{{organizationBrand.secondary_color}};font-weight: bold;">
+            {% if DDnotification %}
+                {% if organizationType == 'Fundraising Organization' || organizationType == 'Grandfathered Schools'  %}
+                    Check out the latest information from your supporters
+                    {% else %}
+                    Check out the latest community promotions from your sponsors
+                    {% endif %}
+                {% else %}            
+                    {% if organizationType == 'Fundraising Organization' || organizationType == 'Grandfathered Schools'  %}
+                    Check out the latest information from our supporters
+                    {% else %}
+                    Check out the latest community promotions from our sponsors
+                    {% endif %}
             {% endif %}
             </div>
         
@@ -175,8 +183,18 @@
         
         {% if socialMedia %}
         <div style="margin:25px 0 5px;text-align:center;">
-            <div style="font-size:16px;line-height:22px;font-style:italic;text-align: center;">{{socialMedia.label}}</div>
+            <div style="font-size:16px;line-height:22px;font-style:italic;text-align: center;">
+                {% if DDnotification %}
+                Go to your communication channels!
+                {% else %}
+                Follow us on social!         
+                {% endif %}            
+            </div>
             <div style="margin-top:10px;text-align:center">
+                {% if DDnotification && socialMedia.website %}
+                <a href="{{socialMedia.website}}" style="background: url('https://app.digitaldeets.com/wp-content/themes/sdthm/img/share/website_sm.png') center center no-repeat {{organizationBrand.secondary_color}};display:inline-block;width:30px;height:30px;margin:0 8px;border-radius:50%;text-decoration:none" target="_blank"></a>
+                {% endif %}                
+                
                 {% if socialMedia.facebook %}
                 <a href="{{socialMedia.facebook}}" style="background: url('https://app.digitaldeets.com/wp-content/themes/sdthm/img/share/facebook_sm.png') center center no-repeat {{organizationBrand.secondary_color}};display:inline-block;width:30px;height:30px;margin:0 8px;border-radius:50%;text-decoration:none" target="_blank"></a>
                 {% endif %}
